@@ -1,0 +1,24 @@
+.splash-header{
+    background-color: #f4f2e9;
+    background-image: url("masthead_background.jpg");
+    height: 370px;
+}
+
+.splash-header-mainheader-logo{
+    font-family: 'Lato';
+    font-size: x-large;
+}
+
+.splash-header-mainheader{
+    display: flex;
+    justify-content:space-around;
+}
+
+.splash-header-subheader-slogan{
+    display: inline-block;
+}
+
+.splash-header-subheader-signup{
+    display: inline-block;
+}
+
