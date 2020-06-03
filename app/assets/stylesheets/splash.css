@@ -14,11 +14,40 @@
     justify-content:space-around;
 }
 
+.splash-header-subheader{
+    position: relative;
+    top: 100px;
+}
+
 .splash-header-subheader-slogan{
-    display: inline-block;
+    float: left;
+
 }
 
 .splash-header-subheader-signup{
-    display: inline-block;
+    float: right;
+}
+
+.splash-header-subheader-signup-form input{
+    display: block;
+}
+
+.splash-main-left{
+    display: flex;
+    justify-content: center;
+}
+
+.splash-main-left h2{
+    font-size: 18px;
+}
+
+.splash-main-discover{
+    background-color: #f4f2e9;
+}
+
+.splash-main-discover-booklinks img{
+    float: left;
+    height: 120px;
+    width: 80px;
 }
 

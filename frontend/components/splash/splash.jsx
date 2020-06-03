@@ -33,7 +33,7 @@ class Splash extends React.Component {
     render() {
         const { currentUser, login} = this.props;
         return (
-            <div className="splash-main">
+            <div className="splash">
                 <header className="splash-header">
                     <div className="splash-header-mainheader">
 
@@ -68,7 +68,8 @@ class Splash extends React.Component {
                         </div>
 
                         <div className="splash-header-subheader-signup">
-                            <form onClick={this.handleSubmit}>
+                            <form className="splash-header-subheader-signup-form"
+                            onClick={this.handleSubmit}>
                                 <label>New here? Create a free account!</label>
                                 <input type="text" 
                                         placeholder="Name"
@@ -89,10 +90,115 @@ class Splash extends React.Component {
                             </form>
                         </div>
                     </div>
-
                 </header>
 
+                <main className="splash-main">
+                    <div className="splash-main-left">
+                        <div className="splash-main-left-left">
+                            <h2>Deciding what to read next?</h2>
+                            <p>
+                                You’re in the right place. Tell us what titles or 
+                                genres you’ve enjoyed in the past, and we’ll give 
+                                you surprisingly insightful recommendations.
+                            </p>
+                        </div>
 
+                        <div className="splash-main-left-right">
+                            <h2>What are your friends reading?</h2>
+                            <p>
+                                Chances are your friends are discussing their 
+                                favorite (and least favorite) books on Goodreads.
+                            </p>
+                        </div>
+
+                        <div className="splash-main-discover">
+                            <h2>What will you discover?</h2>
+                            <div className="splash-main-discover-brianlikes">
+                                <p>
+                                    Because Brian liked…
+                                </p>
+                                <p>
+                                    He discovered:
+                                </p>
+                                <div className="splash-main-discover-booklinks">
+                                    <img src={window.harrypotterURL} 
+                                    alt="Harry Potter and the Sorcerer's Stone" />
+
+                                    <img src={window.agameofthronesURL}
+                                        alt="A Game of Thrones" />
+
+                                    <img src={window.thewayofkingsURL}
+                                        alt="The Way of Kings" />
+
+                                    <img src={window.theemperorssoulURL}
+                                        alt="The Emperors Soul" />
+
+                                    <img src={window.thenameofthewindURL}
+                                        alt="The Name of the Wind" />
+                                </div>
+                            </div>
+
+                            <div className="splash-main-discover-deborahlikes">
+                                <p>
+                                    Because Deborah liked…
+                                </p>
+                                <p>
+                                    She discovered:
+                                </p>
+                                <div className="splash-main-discover-booklinks">
+                                    <img src={window.endersgameURL}
+                                        alt="Harry Potter and the Sorcerer's Stone" />
+
+                                    <img src={window.a2001URL}
+                                        alt="A Game of Thrones" />
+
+                                    <img src={window.foundationURL}
+                                        alt="The Way of Kings" />
+
+                                    <img src={window.a112263URL}
+                                        alt="The Emperors Soul" />
+
+                                    <img src={window.duneURL}
+                                        alt="The Name of the Wind" />
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div className="splash-main-right">
+
+                    </div>
+                </main>
+
+                <footer className="splash-footer">
+                    <div>
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li>
+                                About us
+                            </li>
+
+                            <li>
+                                Careers
+                            </li>
+
+                            <li>
+                                Terms
+                            </li>
+
+                            <li>
+                                Privacy
+                            </li>
+
+                            <li>
+                                Help
+                            </li>
+                        </ul>
+                    </div>
+
+                </footer>
             </div>
             
         )
