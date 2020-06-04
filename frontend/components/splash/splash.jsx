@@ -86,7 +86,7 @@ class Splash extends React.Component {
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                 />
-                                <input type="submit" value="Sign up"/>
+                                <input className="splash-header-subheader-signup-form-submit" type="submit" value="Sign up"/>
                             </form>
                         </div>
                     </div>
@@ -173,27 +173,81 @@ class Splash extends React.Component {
                 </main>
 
                 <footer className="splash-footer">
-                    <div>
+                    <div className="splash-footer-company">
                         <h3>COMPANY</h3>
                         <ul>
                             <li>
-                                About us
+                                <a href="https://www.goodreads.com/about/us">About us</a>
                             </li>
-
                             <li>
-                                Careers
+                                <a href="https://www.goodreads.com/jobs">Careers</a>
                             </li>
-
                             <li>
-                                Terms
+                                <a href="https://www.goodreads.com/about/terms">Terms</a>                                
                             </li>
-
                             <li>
-                                Privacy
+                                <a href="https://www.goodreads.com/about/privacy">Privacy</a>                                
+                                
                             </li>
-
                             <li>
-                                Help
+                                <a href="https://help.goodreads.com/">Help</a>                                
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div className="splash-footer-workwithus">
+                        <h3>WORK WITH US</h3>
+                        <ul>
+                            <li>
+                                <a href="https://www.goodreads.com/author/program">Authors</a>
+                            </li>
+                            <li>
+                                <a href="https://www.goodreads.com/advertisers">Advertise</a>
+                            </li>
+                            <li>
+                                <a href="https://www.goodreads.com/news?content_type=author_blogs">Authors &amp; ads blog</a>
+                            </li>
+                            <li>
+                                <a href="https://www.goodreads.com/api">API</a>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="splash-footer-connect">
+                        <h3>CONNECT</h3>
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/Goodreads/">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/goodreads">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/goodreads/">Instagram</a>
+                            </li>
+                            <li>
+                                
+                                <a href="https://www.linkedin.com/company/goodreads-com/">
+                                    Linkedin
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div className="splash-footer-misc">
+                        <ul>
+                            <li>
+                                <a href="https://itunes.apple.com/app/apple-store/id355833469?pt=325668&ct=mw_footer&mt=8">Apple Store Image</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">Google Store Image</a>
+                            </li>
+                            <li>
+                                © 2020 Goodreads, Inc.
+                            </li>
+                            <li>
+                                <a href="https://www.goodreads.com/toggle_mobile">Mobile version</a>
                             </li>
                         </ul>
                     </div>

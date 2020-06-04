@@ -4,14 +4,20 @@
     height: 370px;
 }
 
+.splash-header-mainheader{
+    display: block;
+    justify-content:space-around;
+}
 .splash-header-mainheader-logo{
-    font-family: 'Lato';
-    font-size: x-large;
+    /* display: inline-block;
+    float: left; */
+    float: left;
+    width: 30%;
 }
 
-.splash-header-mainheader{
-    display: flex;
-    justify-content:space-around;
+.splash-header-mainheader-loginform{
+    float: left;
+    width: 70%;
 }
 
 .splash-header-subheader{
@@ -30,7 +36,12 @@
 
 .splash-header-subheader-signup-form input{
     display: block;
+    width: 270px;
 }
+
+/* .splash-header-subheader-signup-form:last-child{
+    width: 85px;
+} */
 
 .splash-main-left{
     display: flex;
