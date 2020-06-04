@@ -38,27 +38,29 @@ class Splash extends React.Component {
                     <div className="splash-header-mainheader">
 
                         <div className="splash-header-mainheader-logo">
-                            perfectperuse
+                            <span className="splash-header-mainheader-logo-perfect">
+                                perfect
+                            </span>    
+
+                            <span className="splash-header-mainheader-logo-peruse">
+                                peruse
+                            </span>    
                         </div>
 
                         <form className="splash-header-mainheader-loginform" onSubmit={this.handleSubmit}>
-                            <label>
                                 <input type="text" 
                                 placeholder="Email address"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 />
-                            </label>
 
-                            <label>
-                                    <input type="password" 
-                                    placeholder="Password" 
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                    />
-                            </label>
-                            
-                            <input type="submit" value="Sign in"/>
+                                <input type="password" 
+                                placeholder="Password" 
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                />
+                                
+                                <input type="submit" value="Sign in"/>
                         </form>
                     </div>
 
@@ -94,32 +96,32 @@ class Splash extends React.Component {
 
                 <main className="splash-main">
                     <div className="splash-main-left">
-                        <div className="splash-main-left-left">
-                            <h2>Deciding what to read next?</h2>
-                            <p>
-                                You’re in the right place. Tell us what titles or 
-                                genres you’ve enjoyed in the past, and we’ll give 
-                                you surprisingly insightful recommendations.
-                            </p>
-                        </div>
+                        <div className="splash-main-left-top">
+                            <div className="splash-main-left-top-a">
+                                <h2>Deciding what to read next?</h2>
+                                <p>
+                                    You’re in the right place. Tell us what titles or 
+                                    genres you’ve enjoyed in the past, and we’ll give 
+                                    you surprisingly insightful recommendations.
+                                </p>
+                            </div>
 
-                        <div className="splash-main-left-right">
-                            <h2>What are your friends reading?</h2>
-                            <p>
-                                Chances are your friends are discussing their 
-                                favorite (and least favorite) books on Goodreads.
-                            </p>
+                            <div className="splash-main-left-top-b">
+                                <h2>What are your friends reading?</h2>
+                                <p>
+                                    Chances are your friends are discussing their 
+                                    favorite (and least favorite) books on Goodreads.
+                                </p>
+                            </div>
                         </div>
 
                         <div className="splash-main-discover">
-                            <h2>What will you discover?</h2>
+                            <h2>What will <i>you</i> discover?</h2>
                             <div className="splash-main-discover-brianlikes">
-                                <p>
-                                    Because Brian liked…
-                                </p>
-                                <p>
-                                    He discovered:
-                                </p>
+                                <pre>
+                                    Because Brian liked…                                                                                    He discovered:
+                                </pre>
+                                
                                 <div className="splash-main-discover-booklinks">
                                     <img src={window.harrypotterURL} 
                                     alt="Harry Potter and the Sorcerer's Stone" />
@@ -133,18 +135,19 @@ class Splash extends React.Component {
                                     <img src={window.theemperorssoulURL}
                                         alt="The Emperors Soul" />
 
+                                    <img className="arrow" src={window.discoveryarrowURL}
+                                        alt="arrow"/>
+
                                     <img src={window.thenameofthewindURL}
                                         alt="The Name of the Wind" />
                                 </div>
                             </div>
 
                             <div className="splash-main-discover-deborahlikes">
-                                <p>
-                                    Because Deborah liked…
-                                </p>
-                                <p>
-                                    She discovered:
-                                </p>
+                                <pre>
+                                    Because Deborah liked…                                                                              She discovered:
+                                </pre>
+    
                                 <div className="splash-main-discover-booklinks">
                                     <img src={window.endersgameURL}
                                         alt="Harry Potter and the Sorcerer's Stone" />
@@ -157,6 +160,9 @@ class Splash extends React.Component {
 
                                     <img src={window.a112263URL}
                                         alt="The Emperors Soul" />
+
+                                    <img className="arrow" src={window.discoveryarrowURL}
+                                        alt="arrow" />
 
                                     <img src={window.duneURL}
                                         alt="The Name of the Wind" />
@@ -219,18 +225,28 @@ class Splash extends React.Component {
                         <h3>CONNECT</h3>
                         <ul>
                             <li>
-                                <a href="https://www.facebook.com/Goodreads/">Facebook</a>
+                                <a href="https://www.facebook.com/Goodreads/">
+                                    <img src={window.facebookURL}
+                                        alt="Facebook" />
+                                </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/goodreads">Twitter</a>
+                                <a href="https://twitter.com/goodreads">
+                                    <img src={window.twitterURL}
+                                        alt="Twitter" />
+                                </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/goodreads/">Instagram</a>
+                                <a href="https://www.instagram.com/goodreads/">
+                                        <img src={window.instagramURL}
+                                            alt="Instagram" />
+                                </a>
                             </li>
                             <li>
                                 
                                 <a href="https://www.linkedin.com/company/goodreads-com/">
-                                    Linkedin
+                                    <img src={window.linkedinURL}
+                                        alt="Linkedin" />
                                 </a>
                             </li>
                         </ul>
@@ -238,11 +254,21 @@ class Splash extends React.Component {
 
 
                     <div className="splash-footer-misc">
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="https://itunes.apple.com/app/apple-store/id355833469?pt=325668&ct=mw_footer&mt=8">
+                                        <img src={window.applestoreURL}
+                                            alt="Apple Play Store" />
+                                    </a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+                                        <img src={window.googleplayURL}
+                                            alt="Google Store" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                         <ul>
-                            <li>
-                                <a href="https://itunes.apple.com/app/apple-store/id355833469?pt=325668&ct=mw_footer&mt=8">Apple Store Image</a>
-                                <a href="https://play.google.com/store/apps/details?id=com.goodreads&utm_source=mw_footer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">Google Store Image</a>
-                            </li>
                             <li>
                                 © 2020 Goodreads, Inc.
                             </li>

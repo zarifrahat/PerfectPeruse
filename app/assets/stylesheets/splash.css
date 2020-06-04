@@ -1,23 +1,59 @@
 .splash-header{
-    background-color: #f4f2e9;
+    display: flex;
+    flex-direction: column;
+    background-color: #F6F4EC;
     background-image: url("masthead_background.jpg");
     height: 370px;
+    padding-bottom: 16px;
 }
 
 .splash-header-mainheader{
-    display: block;
-    justify-content:space-around;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 .splash-header-mainheader-logo{
-    /* display: inline-block;
-    float: left; */
-    float: left;
+    display: flex;
     width: 30%;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 46px;
+    margin-top: 3px;
+}
+
+.splash-header-mainheader-logo-perfect{
+    font-weight: 100;
+    color: #6F5D4E;
+}
+
+.splash-header-mainheader-logo-peruse{
+    font-weight: 300;
+    color: #463020;
+
 }
 
 .splash-header-mainheader-loginform{
-    float: left;
-    width: 70%;
+    display: flex;
+    width: 69%;
+    margin-top: 17px;
+
+}
+
+.splash-header-mainheader-loginform input{
+    display: flex;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+    height: 14px;
+    width: 120px;
+    border-radius: 3px;
+    padding: 5px;
+    border: 1px;
+    margin: 2px;
+}
+
+.splash-header-mainheader-loginform:last-child{
+    display: flex;
+    height: 14px;
+    width: 20px;
 }
 
 .splash-header-subheader{
@@ -39,13 +75,54 @@
     width: 270px;
 }
 
-/* .splash-header-subheader-signup-form:last-child{
-    width: 85px;
-} */
 
 .splash-main-left{
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
     display: flex;
-    justify-content: center;
+    background-color: white;
+    margin: auto;
+    flex-direction: column;
+    width: 50%
+
+}
+
+.splash-main-left-top{
+    display: flex;
+}
+
+.splash-main-left-top-a{
+    height: 136px;
+    width: 300px;
+}
+
+
+.splash-main-left-top-b{
+    height: 136px;
+    width: 290px;
+}
+.splash-main-left-top h2{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.splash-main-left-top p{
+    font-size: 14px;
+}
+
+.splash-main-discover{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-left: 15px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+pre{
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    margin-top: 15px;
+    margin-bottom: 19px;
 }
 
 .splash-main-left h2{
@@ -55,10 +132,100 @@
 .splash-main-discover{
     background-color: #f4f2e9;
 }
+.splash-main-discover-booklinks{
+    display: flex;
+}
 
-.splash-main-discover-booklinks img{
+.splash-main-discover-booklinks img:not(.arrow){
     float: left;
     height: 120px;
     width: 80px;
+    margin-right: 12px;
+}
+
+.arrow{
+    height: 30px;
+    width: 20px;
+    margin-right: 10px;
+    margin-top: 40px;
+}
+
+.splash-footer{
+    display: flex;
+    height: 195px;
+    background-color: #F9F8F4;
+    margin-top: 25px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.splash-footer h3{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 0px;
+}
+
+.splash-footer-company{
+    flex-basis: 17%;
+    padding-left: 35px;
+    padding-right: 15px;
+    color: #7682B1;
+    font-size: 14px;
+    line-height: 1.5;
+
+}
+
+.splash-footer-workwithus{
+    flex-basis: 17%;
+    color: #7682B1;
+    font-size: 14px;
+    line-height: 1.5;
+    padding-right: 15px;
+
+
+}
+
+.splash-footer-connect{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 17%;
+    color: #7682B1;
+    line-height: 1.5;
+    padding-right: 15px;
+
+}
+
+.splash-footer-connect ul{
+    display: flex;
+}
+
+.splash-footer-misc{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    padding-left: 240px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.splash-footer-misc div{
+    display: flex;
+    margin-bottom: 8px;
+}
+
+
+
+.splash-footer-connect img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.splash-footer-misc img{
+    width: 135px;
+    height: 40px;
+    margin-right: 10px;
 }
 
