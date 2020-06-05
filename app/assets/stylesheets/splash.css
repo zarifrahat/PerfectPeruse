@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.splash-background{
+    position: absolute;
+    z-index: -2;
+    height: 370px;
 
+}
 .splash-header{
     display: flex;
     flex-direction: column;
-    background-color: #F6F4EC;
-    background-image: url("masthead_background.jpg");
     height: 370px;
     padding-bottom: 16px;
 }
@@ -74,6 +77,7 @@
 
 .splash-header-subheader-signup{
     display: flex;
+    flex-direction: column;
     width: 500px;
     margin-top: 20px;
 }
@@ -96,7 +100,7 @@
     width: 270px;
     font-size: 16px; 
     padding: 6px 5px 6px 5px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     border-radius: 3px;
     border: 1px solid #DCD6CC;
 }
@@ -107,9 +111,35 @@
     font-size: 18px;
     text-align: center;
     background-color: #FDD05E;
-    border-radius: 3px;
+    border-radius: 5px;
 
 }
+
+.splash-header-subheader-signup-form-paragraph{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.splash-header-subheader-signup-form-paragraph p{
+    color: #706b5f;
+    font-size: 10px;
+    width:180px;
+    margin-left: 15px;
+}
+
+.splash-header-subheader-demouser{
+    width: 140px;
+    height: 40px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 17px;
+    text-align: center;
+    background-color: #FDD05E;
+    border: 3px solid  #FDD05E;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 6px;
+}
+    
 
 
 .splash-main-left{
@@ -118,7 +148,7 @@
     background-color: white;
     margin: auto;
     flex-direction: column;
-    width: 50%
+    width: 625px;
 
 }
 
@@ -281,6 +311,6 @@
 .splash-footer-misc img{
     width: 135px;
     height: 40px;
-    margin-right: 10px;
+    margin-right: 3px;
 }
 

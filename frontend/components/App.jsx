@@ -1,10 +1,23 @@
 import React from "react";
+import {AuthRoute, ProtectedRoute} from "../util/route_util"
+import {
+    Route,
+    Redirect,
+    Switch,
+    Link,
+    HashRouter
+} from 'react-router-dom';
+
 import SplashContainer from "./splash/splash_container";
-import {AuthRoute} from "../util/route_util"
+import usersHomeContainer from "./usersHome/usersHome_container";
 
 const App = () => (
     <div>
-        <AuthRoute exact path="/" component={SplashContainer} /> 
+        <Switch>
+            <AuthRoute exact path="/" component={SplashContainer} /> 
+            <ProtectedRoute exact path="/user" component={usersHomeContainer} /> 
+        </Switch>
+
     </div>
 );
 

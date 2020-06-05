@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LoginForm from '../loginform/loginform';
+import SignupForm from '../signupform/signupform';
+
+
 
 /*
 Export a `PostShow` presentational component that renders a post's information
@@ -16,13 +20,19 @@ class Splash extends React.Component {
             email: "",
             password: ""
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.demoUser = {
+            name: "Casey Lee",
+            email: "caseylee@gmail.com",
+            password: "1234567"
+        }
+        this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
-    handleSubmit(e){
+    handleDemoUser(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.login(user)
+        const user = this.demoUser;
+        this.props.login(user);
     }
 
     update(field){
@@ -31,9 +41,11 @@ class Splash extends React.Component {
         }
     }
     render() {
-        const { currentUser, login} = this.props;
+        const { currentUser, login, signup} = this.props;
         return (
             <div className="splash">
+                <img className="splash-background" src={window.masthead_backgroundURL}
+                        alt="background" />
                 <header className="splash-header">
                     <div className="splash-header-mainheader">
 
@@ -41,22 +53,10 @@ class Splash extends React.Component {
                             <img src={window.perfectperuseURL}
                                 alt="perfectperuse" />
                         </div>
-
-                        <form className="splash-header-mainheader-loginform" onSubmit={this.handleSubmit}>
-                                <input type="text" 
-                                placeholder="Email address"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                />
-
-                                <input type="password" 
-                                placeholder="Password" 
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                />
-                                
-                            <input className="splash-header-mainheader-loginform-submit" type="submit" value="Sign in"/>
-                        </form>
+                        <div><LoginForm
+                            currentUser={currentUser}
+                            login={login}
+                        /></div>                           
                     </div>
 
                     <div className="splash-header-subheader">
@@ -65,29 +65,11 @@ class Splash extends React.Component {
                         </div>
 
                         <div className="splash-header-subheader-signup">
-                            
-                            <form className="splash-header-subheader-signup-form"
-                            onClick={this.handleSubmit}>
-                                <label className="splash-header-subheader-signup-form-label">
-                                    New here? Create a free account!
-                                </label>
-                                <input type="text" 
-                                        placeholder="Name"
-                                        value={this.state.name}
-                                        onChange={this.update('name')}
-                                />
-                                <input type="text"
-                                    placeholder="Email address"
-                                    value={this.state.email}
-                                    onChange={this.update('email')}
-                                />
-                                <input type="password"
-                                    placeholder="Password"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                />
-                                <input className="splash-header-subheader-signup-form-submit" type="submit" value="Sign up"/>
-                            </form>
+                            <div><SignupForm 
+                            currentUser={currentUser}
+                            signup={signup}
+                            /></div>                            
+                            <button className="splash-header-subheader-demouser" onClick={this.handleDemoUser}>Demo User</button>
                         </div>
                     </div>
                 </header>
@@ -133,8 +115,8 @@ class Splash extends React.Component {
                                     <img src={window.agameofthronesURL}
                                         alt="A Game of Thrones" />
 
-                                    <img src={window.thewayofkingsURL}
-                                        alt="The Way of Kings" />
+                                    <img src={window.awizardofearthseaURL}
+                                        alt="A Wizard of Earthsea" />
 
                                     <img src={window.theemperorssoulURL}
                                         alt="The Emperors Soul" />

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Splash from './splash';
+import UsersHome from './usersHome';
 import { logout } from '../../actions/session_actions';
 
 
@@ -8,8 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    login: (user) => dispatch(login(user)),
-    signup: (user) => dispatch(signup(user))
+    logout: () => dispatch(logout())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Splash);
+export default connect(mapStateToProps, mapDispatchToProps)(UsersHome);
