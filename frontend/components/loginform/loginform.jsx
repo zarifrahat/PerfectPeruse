@@ -16,7 +16,6 @@ class LoginForm extends React.Component {
     handleLogin(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        debugger
         this.props.login(user);
     }
 
@@ -31,7 +30,7 @@ class LoginForm extends React.Component {
         return (
             <form className="splash-header-mainheader-loginform" onSubmit={this.handleLogin}>
 
-                    <input type="text"
+                    <input type="email"
                         placeholder="Email address"
                         value={this.state.email}
                         onChange={this.update('email')}
@@ -41,6 +40,8 @@ class LoginForm extends React.Component {
                         placeholder="Password"
                         value={this.state.password}
                         onChange={this.update('password')}
+                        pattern=".{6,}" 
+                        title="Password must be 6 character or more!"
                     />
 
                     <input className="splash-header-mainheader-loginform-submit" type="submit" value="Sign in" />

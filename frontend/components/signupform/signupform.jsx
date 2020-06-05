@@ -6,7 +6,7 @@ class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
+            username: "",
             email: "",
             password: ""
         }
@@ -37,16 +37,23 @@ class SignupForm extends React.Component {
                     placeholder="Name"
                     value={this.state.username}
                     onChange={this.update('username')}
+                    // pattern=".{3,}"
+                    title="Must enter your name!"
+                    required
                 />
-                <input type="text"
+                <input type="email"
                     placeholder="Email address"
                     value={this.state.email}
                     onChange={this.update('email')}
+                    required
                 />
                 <input type="password"
                     placeholder="Password"
                     value={this.state.password}
                     onChange={this.update('password')}
+                    pattern=".{6,}" 
+                    title="Password must be 6 character or more!"
+                    required
                 />
                 <div className="splash-header-subheader-signup-form-paragraph">
                     <input className="splash-header-subheader-signup-form-submit" type="submit" value="Sign up" />
