@@ -38,13 +38,8 @@ class Splash extends React.Component {
                     <div className="splash-header-mainheader">
 
                         <div className="splash-header-mainheader-logo">
-                            <span className="splash-header-mainheader-logo-perfect">
-                                perfect
-                            </span>    
-
-                            <span className="splash-header-mainheader-logo-peruse">
-                                peruse
-                            </span>    
+                            <img src={window.perfectperuseURL}
+                                alt="perfectperuse" />
                         </div>
 
                         <form className="splash-header-mainheader-loginform" onSubmit={this.handleSubmit}>
@@ -60,7 +55,7 @@ class Splash extends React.Component {
                                 onChange={this.update('password')}
                                 />
                                 
-                                <input type="submit" value="Sign in"/>
+                            <input className="splash-header-mainheader-loginform-submit" type="submit" value="Sign in"/>
                         </form>
                     </div>
 
@@ -70,9 +65,12 @@ class Splash extends React.Component {
                         </div>
 
                         <div className="splash-header-subheader-signup">
+                            
                             <form className="splash-header-subheader-signup-form"
                             onClick={this.handleSubmit}>
-                                <label>New here? Create a free account!</label>
+                                <label className="splash-header-subheader-signup-form-label">
+                                    New here? Create a free account!
+                                </label>
                                 <input type="text" 
                                         placeholder="Name"
                                         value={this.state.name}
@@ -116,11 +114,17 @@ class Splash extends React.Component {
                         </div>
 
                         <div className="splash-main-discover">
-                            <h2>What will <i>you</i> discover?</h2>
+                            <h2>What will <span>you</span> discover?</h2>
                             <div className="splash-main-discover-brianlikes">
-                                <pre>
-                                    Because Brian liked…                                                                                    He discovered:
-                                </pre>
+                                <div className="splash-main-discover-brianlikes-topline">
+                                    <div>
+                                        Because Brian liked…
+                                    </div>
+                                    <div>
+                                        He discovered:
+                                    </div>
+                                </div>
+                               
                                 
                                 <div className="splash-main-discover-booklinks">
                                     <img src={window.harrypotterURL} 
@@ -140,32 +144,44 @@ class Splash extends React.Component {
 
                                     <img src={window.thenameofthewindURL}
                                         alt="The Name of the Wind" />
+                                    <div>
+                                        Fantasy
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="splash-main-discover-deborahlikes">
-                                <pre>
-                                    Because Deborah liked…                                                                              She discovered:
-                                </pre>
-    
+                                <div className="splash-main-discover-deborahlikes-topline">
+                                    <div>
+                                        Because Deborah liked…
+                                    </div>
+                                    <div>
+                                        She discovered:
+                                    </div>
+                                </div>
+
                                 <div className="splash-main-discover-booklinks">
                                     <img src={window.endersgameURL}
-                                        alt="Harry Potter and the Sorcerer's Stone" />
+                                        alt="Enders Game" />
 
                                     <img src={window.a2001URL}
-                                        alt="A Game of Thrones" />
+                                        alt="2001" />
 
                                     <img src={window.foundationURL}
-                                        alt="The Way of Kings" />
+                                        alt="Foundation" />
 
                                     <img src={window.a112263URL}
-                                        alt="The Emperors Soul" />
+                                        alt="11/22/63" />
 
                                     <img className="arrow" src={window.discoveryarrowURL}
                                         alt="arrow" />
 
                                     <img src={window.duneURL}
-                                        alt="The Name of the Wind" />
+                                        alt="Dune" />
+
+                                    <div>
+                                        Science Fiction
+                                    </div>
                                 </div>
                             </div>
                             

@@ -14,6 +14,7 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  
 }
 
 ul {
@@ -25,7 +26,6 @@ ul {
 input[type="password"],
 input[type="email"],
 input[type="text"],
-input[type="submit"],
 textarea,
 button {
   -webkit-appearance: none;
@@ -33,9 +33,6 @@ button {
   background-color: white;
 }
 
-button,
-input[type="submit"] {
-  cursor: pointer;
-  color: white;
-  background-color: #382110;
-}
+
+
+

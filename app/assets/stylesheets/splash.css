@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 .splash-header{
     display: flex;
     flex-direction: column;
@@ -10,69 +12,103 @@
 .splash-header-mainheader{
     display: flex;
     width: 100%;
-    justify-content: space-around;
 }
 .splash-header-mainheader-logo{
     display: flex;
-    width: 30%;
-    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    width: 25%;
+    font-family: sans-serif;
     font-size: 46px;
     margin-top: 3px;
+    margin-left: 130px;
+    margin-right: 329px;
 }
 
-.splash-header-mainheader-logo-perfect{
-    font-weight: 100;
-    color: #6F5D4E;
-}
-
-.splash-header-mainheader-logo-peruse{
-    font-weight: 300;
-    color: #463020;
-
-}
 
 .splash-header-mainheader-loginform{
     display: flex;
-    width: 69%;
+    width: 25%;
     margin-top: 17px;
 
 }
 
-.splash-header-mainheader-loginform input{
+.splash-header-mainheader-loginform input:not(.splash-header-mainheader-loginform-submit){
     display: flex;
     font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     height: 14px;
     width: 120px;
     border-radius: 3px;
+    border: 1px solid #DCD6CC;
     padding: 5px;
     border: 1px;
     margin: 2px;
 }
 
-.splash-header-mainheader-loginform:last-child{
+.splash-header-mainheader-loginform-submit{
     display: flex;
-    height: 14px;
-    width: 20px;
+    background-color: #382110;
+    color: white;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+    padding-left: 13px;
+    padding-right: 13px;
+    margin: 2px;
+    height: 32px;
+    border-radius: 3px;
+    text-align: center;
 }
 
 .splash-header-subheader{
-    position: relative;
-    top: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .splash-header-subheader-slogan{
-    float: left;
-
+    display: flex;
+    width: 446px;
+    height: 116px;
+    margin-top: 48px;
+    margin-left: 243px;
+    margin-right: 130px;
 }
 
 .splash-header-subheader-signup{
-    float: right;
+    display: flex;
+    width: 500px;
+    margin-top: 20px;
 }
 
-.splash-header-subheader-signup-form input{
-    display: block;
+.splash-header-subheader-signup-form{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.splash-header-subheader-signup-form-label{
+    display: flex;
+    font-size: 18px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+.splash-header-subheader-signup-form input:not(.splash-header-subheader-signup-form-submit){
+    display: flex;
     width: 270px;
+    font-size: 16px; 
+    padding: 6px 5px 6px 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid #DCD6CC;
+}
+
+.splash-header-subheader-signup-form-submit{
+    width: 88px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #FDD05E;
+    border-radius: 3px;
+
 }
 
 
@@ -88,11 +124,13 @@
 
 .splash-main-left-top{
     display: flex;
+    justify-content: space-between;
 }
 
 .splash-main-left-top-a{
     height: 136px;
     width: 300px;
+
 }
 
 
@@ -107,6 +145,7 @@
 
 .splash-main-left-top p{
     font-size: 14px;
+    padding-right: 25px;
 }
 
 .splash-main-discover{
@@ -118,12 +157,23 @@
     padding-bottom: 20px;
 }
 
-pre{
+.splash-main-discover-deborahlikes{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.splash-main-discover-brianlikes-topline, .splash-main-discover-deborahlikes-topline{
+    display: flex;
+    justify-content: space-between;
     font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 12px;
     margin-top: 15px;
     margin-bottom: 19px;
+    padding-right: 142px;
+
 }
+
 
 .splash-main-left h2{
     font-size: 18px;
@@ -143,6 +193,12 @@ pre{
     margin-right: 12px;
 }
 
+.splash-main-discover-booklinks div{
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+}
+
 .arrow{
     height: 30px;
     width: 20px;
@@ -152,17 +208,16 @@ pre{
 
 .splash-footer{
     display: flex;
-    height: 195px;
+    height: 192px;
     background-color: #F9F8F4;
     margin-top: 25px;
     font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 35px;
 }
 
 .splash-footer h3{
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 900;
     margin-bottom: 8px;
     margin-top: 0px;
 }
