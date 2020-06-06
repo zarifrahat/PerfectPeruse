@@ -18,13 +18,13 @@ class Splash extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            name: "",
+            username: "",
             email: "",
             password: ""
         }
 
         this.demoUser = {
-            name: "Casey Lee",
+            username: "Casey Lee",
             email: "caseylee@gmail.com",
             password: "1234567"
         }
