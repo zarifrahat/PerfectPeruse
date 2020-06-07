@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../footer/footer';
+import Navbar from '../navbar/navbar';
+
 
 
 class UsersHome extends React.Component {
@@ -15,11 +17,19 @@ class UsersHome extends React.Component {
     }
 
     render(){
+        const {currentUser, logout} = this.props
         return(
             <div className="usershome">
+                <Navbar
+                    currentUser={currentUser}
+                    logout={logout}
+                />
+                <br />
+                <br />          
+                <br />
+                <br />
                 <h1>Hello, {this.props.currentUser.username}</h1>
                 <button onClick={this.handleLogout}>Log out</button>
-                {/* NAVBAR GOES HERE */}
                 <div className="usershome-currentlyreading">
                     <p>CURRENTLY READING</p>
                     <img src={window.ofmiceandmenURL}
