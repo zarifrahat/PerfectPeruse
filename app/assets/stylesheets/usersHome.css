@@ -14,6 +14,12 @@
     flex-direction: column;
 }
 
+.usershome-main-left > div{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
 .usershome-main-left-currentlyreading{
     width: 300px;
     height: 170px;
@@ -34,4 +40,20 @@
 .usershome-main-left-currentlyreading img{
     width: 95px;
     height: 140px;
+}
+
+.usershome-main-right-updates{
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.usershome-main-right-updates > div{
+    border: 1px solid #D8D8D8;
+    padding: 10px;
 }

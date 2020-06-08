@@ -46,8 +46,6 @@ class Splash extends React.Component {
         const { currentUser, login, signup} = this.props;
         return (
             <div className="splash">
-                <img className="splash-background" src={window.masthead_backgroundURL}
-                        alt="background" />
                 <header className="splash-header">
                     <div className="splash-header-mainheader">
 
@@ -55,10 +53,10 @@ class Splash extends React.Component {
                             <img src={window.perfectperuseURL}
                                 alt="perfectperuse" />
                         </div>
-                        <div><LoginForm
+                        <LoginForm
                             currentUser={currentUser}
                             login={login}
-                        /></div>                           
+                        />                        
                     </div>
 
                     <div className="splash-header-subheader">
@@ -177,7 +175,7 @@ class Splash extends React.Component {
 
                     </div>
                 </main>
-                <div><Footer/></div>
+                <Footer/>
             </div>
             
         )
