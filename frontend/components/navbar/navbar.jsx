@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom';
 class Navbar extends React.Component{
     constructor(props){
         super(props);
+        this.handleLogout = this.handleLogout.bind(this);
     }
+
+    handleLogout(e) {
+        this.props.logout();
+    }
+
     render(){
         return(
             <div className="navbar">
@@ -61,7 +67,7 @@ class Navbar extends React.Component{
                                  <li>{this.props.currentUser.username.toUpperCase()}</li>
                                     <li>Profile</li>
                                     <li>My Books</li>
-                                    <li>Logout</li>
+                                <li onClick={this.handleLogout}>Logout</li>
                             </ul>
                         </li>
                     </ul>
@@ -87,7 +93,9 @@ class Navbar extends React.Component{
                             <li>{this.props.currentUser.username.toUpperCase()}</li>
                             <li>Profile</li>
                             <li>My Books</li>
-                            <li>Logout</li>
+                            <li>
+                                Logout
+                            </li>
                         </ul>
                     </div>
                 </div>

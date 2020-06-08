@@ -23,6 +23,7 @@ class UsersHome extends React.Component {
                 <Navbar
                     currentUser={currentUser}
                     logout={logout}
+                    handleLogout={this.handleLogout}
                 />
                 <br />
                 <br />          
