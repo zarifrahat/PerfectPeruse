@@ -1,0 +1,37 @@
+.usershome{
+    display: flex;
+    flex-direction: column;
+}
+
+.usershome-main{
+    display: flex;
+    justify-content: center;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.usershome-left{
+    display: flex;
+    flex-direction: column;
+}
+
+.usershome-main-left-currentlyreading{
+    width: 300px;
+    height: 170px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.usershome-main-left-currentlyreading h1, p{
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.usershome-main-left-currentlyreading h1{
+    font-size: 14px;
+    width: 300px;
+}
+
+.usershome-main-left-currentlyreading img{
+    width: 95px;
+    height: 140px;
+}

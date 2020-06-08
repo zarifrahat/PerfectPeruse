@@ -8,7 +8,10 @@ class Navbar extends React.Component{
     render(){
         return(
             <div className="navbar">
-                
+                <div className="hidden">
+                    <img className="navbar-search-icon" src={window.searchURL}
+                        alt="Search" />  
+                </div>
                 
                 <div className="navbar-logo topnav">
                     <img src={window.perfectperuseURL}
@@ -62,10 +65,32 @@ class Navbar extends React.Component{
                             </ul>
                         </li>
                     </ul>
-
-                    
                 </div>  
 
+                <div className="hidden modal-parent">
+                    <button className="modal-button"
+                        onClick={() => (document.getElementsByClassName("modal")[0].style.display = "block")}
+                    >
+                        <img  src={window.userURL}
+                        alt="User" />
+                    </button>
+                </div>
+
+                <div className="modal">
+                    <div className="modal-content slide-right">
+                        <span className="modal-close"
+                            onClick={() => (document.getElementsByClassName("modal")[0].style.display = "none")}
+                           >
+                                &times;
+                        </span>
+                        <ul >
+                            <li>{this.props.currentUser.username.toUpperCase()}</li>
+                            <li>Profile</li>
+                            <li>My Books</li>
+                            <li>Logout</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         )
     }

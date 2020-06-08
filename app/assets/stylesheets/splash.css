@@ -59,6 +59,8 @@
     height: 32px;
     border-radius: 3px;
     text-align: center;
+    cursor: pointer;
+
 }
 
 .splash-header-subheader{
@@ -112,7 +114,7 @@
     text-align: center;
     background-color: #FDD05E;
     border-radius: 5px;
-
+    cursor: pointer;
 }
 
 .splash-header-subheader-signup-form-paragraph{
@@ -138,6 +140,8 @@
     border-radius: 5px;
     padding: 5px;
     margin-top: 6px;
+    cursor: pointer;
+
 }
     
 
