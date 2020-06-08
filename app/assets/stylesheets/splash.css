@@ -5,7 +5,7 @@
     flex-direction: column;
     height: 370px;
     padding-bottom: 16px;
-    background-image: url("masthead_background.jpg");
+    background-image: url("mastheadbackground.jpg");
     width: 100%;
     background-repeat: repeat-x;
 }
@@ -63,6 +63,7 @@
 .splash-header-subheader{
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .splash-header-subheader-slogan{
