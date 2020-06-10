@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require 'open-uri'
 
 User.delete_all
 Book.delete_all
@@ -24,7 +24,12 @@ Though Harry's first year at Hogwarts is the best of his life, not everything is
 
 Full of sympathetic characters, wildly imaginative situations, and countless exciting details, the first installment in the series assembles an unforgettable magical world and sets the stage for many high-stakes adventures to come.",
     rating: 0
+
 })
+
+harry_potter_photo = open('https://perfectperuse-dev.s3.amazonaws.com/harrypotter.jpg')
+
+book1.photo.attach(io: harry_potter_photo, filename: 'harrypotter.jpg')
 
 
 book2 = Book.create!({
@@ -43,6 +48,10 @@ source: georgerrmartin.com ",
     rating: 0
 })
 
+a_game_of_thrones_photo = open('https://perfectperuse-dev.s3.amazonaws.com/agameofthrones.jpg')
+
+book2.photo.attach(io: a_game_of_thrones_photo, filename: 'agameofthrones.jpg')
+
 book3 = Book.create!({
     title: "Ender's Game",
     author: "Orson Scott Card",
@@ -54,6 +63,10 @@ But Ender is not the only result of the experiment. The war with the Buggers has
 Source: hatrack.com",
     rating: 0
 })
+
+enders_game_photo = open('https://perfectperuse-dev.s3.amazonaws.com/endersgame.jpg')
+
+book3.photo.attach(io: enders_game_photo, filename: 'endersgame.jpg')
 
 
 book4 = Book.create!({
@@ -68,6 +81,11 @@ A high-action story written with a poet's hand, The Name of the Wind is a master
     rating: 0
 })
 
+the_name_of_the_wind_photo = open('https://perfectperuse-dev.s3.amazonaws.com/thenameofthewind.jpg')
+
+book4.photo.attach(io: the_name_of_the_wind_photo, filename: 'thenameofthewind.jpg')
+
+
 book5 = Book.create!({
     title: "A Wizard of Earthsea",
     author: "Ursula K. Le Guin",
@@ -77,6 +95,11 @@ book5 = Book.create!({
 Hungry for power and knowledge, Sparrowhawk tampered with long-held secrets and loosed a terrible shadow upon the world. This is the tale of his testing, how he mastered the mighty words of power, tamed an ancient dragon, and crossed death's threshold to restore the balance.",
     rating: 0
 })
+
+a_wizard_of_earthsea_photo = open('https://perfectperuse-dev.s3.amazonaws.com/awizardofearthsea.jpg')
+
+book5.photo.attach(io: a_wizard_of_earthsea_photo, filename: 'awizardofearthsea.jpg')
+
 
 book6 = Book.create!({
     title: "Of Mice and Men",
@@ -90,6 +113,10 @@ Tackling universal themes such as the friendship of a shared vision, and giving 
     rating: 0
 })
 
+of_mice_and_men_photo = open('https://perfectperuse-dev.s3.amazonaws.com/ofmiceandmen.jpg')
+
+book6.photo.attach(io: of_mice_and_men_photo, filename: 'ofmiceandmen.jpg')
+
 
 book7 = Book.create!({
     title: "The Old Man and the Sea",
@@ -100,6 +127,10 @@ book7 = Book.create!({
     rating: 0
 })
 
+the_old_man_and_the_sea_photo = open('https://perfectperuse-dev.s3.amazonaws.com/theoldmanandthesea.jpg')
+
+book7.photo.attach(io: the_old_man_and_the_sea_photo, filename: 'theoldmanandthesea.jpg')
+
 book8 = Book.create!({
     title: "1984",
     author: "George Orwell",
@@ -107,6 +138,10 @@ book8 = Book.create!({
     summary: "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life—the ubiquity of television, the distortion of the language—and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written. ",
     rating: 0
 })
+
+a1984_photo = open('https://perfectperuse-dev.s3.amazonaws.com/a1984.jpg')
+
+book8.photo.attach(io: a1984_photo, filename: 'a1984.jpg')
 
 
 book9 = Book.create!({
@@ -116,6 +151,10 @@ book9 = Book.create!({
     summary: "Life can turn on a dime—or stumble into the extraordinary, as it does for Jake Epping, a high school English teacher in Lisbon Falls, Maine. While grading essays by his GED students, Jake reads a gruesome, enthralling piece penned by janitor Harry Dunning: fifty years ago, Harry somehow survived his father’s sledgehammer slaughter of his entire family. Jake is blown away...but an even more bizarre secret comes to light when Jake’s friend Al, owner of the local diner, enlists Jake to take over the mission that has become his obsession—to prevent the Kennedy assassination. How? By stepping through a portal in the diner’s storeroom, and into the era of Ike and Elvis, of big American cars, sock hops, and cigarette smoke... Finding himself in warmhearted Jodie, Texas, Jake begins a new life. But all turns in the road lead to a troubled loner named Lee Harvey Oswald. The course of history is about to be rewritten...and become heart-stoppingly suspenseful.",
     rating: 0
 })
+
+a112263_photo = open('https://perfectperuse-dev.s3.amazonaws.com/a112263.jpg')
+
+book9.photo.attach(io: a112263_photo, filename: 'a112263.jpg')
 
 
 book10 = Book.create!({
@@ -127,6 +166,10 @@ book10 = Book.create!({
 But soon the fledgling Foundation finds itself at the mercy of corrupt warlords rising in the wake of the receding Empire. Mankind's last best hope is faced with an agonizing choice: submit to the barbarians and be overrun -- or fight them and be destroyed.",
     rating: 0
 })
+
+foundation_photo = open('https://perfectperuse-dev.s3.amazonaws.com/foundation.jpg')
+
+book10.photo.attach(io: foundation_photo, filename: 'foundation.jpg')
 
 
 
@@ -145,6 +188,11 @@ One of the greatest-selling science fiction novels of our time, this classic boo
 })
 
 
+a2001_photo = open('https://perfectperuse-dev.s3.amazonaws.com/a2001.jpg')
+
+book11.photo.attach(io: a2001_photo, filename: 'a2001.jpg')
+
+
 book12 = Book.create!({
     title: "The Emperor's Soul",
     author: "Brandon Sanderson",
@@ -160,6 +208,11 @@ Brimming with magic and political intrigue, this deftly woven fantasy delves int
 })
 
 
+the_emperors_soul_photo = open('https://perfectperuse-dev.s3.amazonaws.com/theemperorssoul.jpg')
+
+book12.photo.attach(io: the_emperors_soul_photo, filename: 'theemperorssoul.jpg')
+
+
 book13 = Book.create!({
     title: "Dune",
     author: "Frank Herbert",
@@ -169,6 +222,11 @@ book13 = Book.create!({
 Published in 1965, it won the Hugo Award in 1966 and the inaugural Nebula Award for Best Novel. Dune is frequently cited as the world's best-selling sf novel. ",
     rating: 0
 })
+
+
+dune_photo = open('https://perfectperuse-dev.s3.amazonaws.com/dune.jpg')
+
+book13.photo.attach(io: dune_photo, filename: 'dune.jpg')
 
 
 
@@ -182,6 +240,10 @@ She warms up with some practical jokes aimed at her hapless parents, but the tru
     rating: 0
 })
 
+matilda_photo = open('https://perfectperuse-dev.s3.amazonaws.com/matilda.jpg')
+
+book14.photo.attach(io: matilda_photo, filename: 'matilda.jpg')
+
 
 
 
@@ -192,6 +254,11 @@ book15 = Book.create!({
     summary: "Moral allegory and spiritual autobiography, The Little Prince is the most translated book in the French language. With a timeless charm it tells the story of a little boy who leaves the safety of his own tiny planet to travel the universe, learning the vagaries of adult behaviour through a series of extraordinary encounters. His personal odyssey culminates in a voyage to Earth and further adventures.",
     rating: 0
 })
+
+
+the_little_prince_photo = open('https://perfectperuse-dev.s3.amazonaws.com/thelittleprince.jpg')
+
+book15.photo.attach(io: the_little_prince_photo, filename: 'thelittleprince.jpg')
 
 
 
@@ -205,6 +272,10 @@ book16 = Book.create!({
 })
 
 
+the_stranger_photo = open('https://perfectperuse-dev.s3.amazonaws.com/thestranger.jpg')
+
+book16.photo.attach(io: the_stranger_photo, filename: 'thestranger.jpg')
+
 
 book17 = Book.create!({
     title: "Animal Farm",
@@ -216,6 +287,10 @@ When Animal Farm was first published, Stalinist Russia was seen as its target. T
 })
 
 
+animal_farm_photo = open('https://perfectperuse-dev.s3.amazonaws.com/animalfarm.jpg')
+
+book17.photo.attach(io: animal_farm_photo, filename: 'animalfarm.jpg')
+
 
 book18 = Book.create!({
     title: "The Alchemist",
@@ -224,3 +299,7 @@ book18 = Book.create!({
     summary: "Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and soul-stirring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried near the Pyramids. Along the way he meets a Gypsy woman, a man who calls himself king, and an alchemist, all of whom point Santiago in the direction of his quest. No one knows what the treasure is, or if Santiago will be able to surmount the obstacles in his path. But what starts out as a journey to find worldly goods turns into a discovery of the treasure found within. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening to our hearts.",
     rating: 0
 })
+
+the_alchemist_photo = open('https://perfectperuse-dev.s3.amazonaws.com/thealchemist.jpg')
+
+book18.photo.attach(io: the_alchemist_photo, filename: 'thealchemist.jpg')

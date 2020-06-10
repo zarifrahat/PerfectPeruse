@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 class NavbarNotLoggedin extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            currentSearch: ""
+        }
         this.handleLogout = this.handleLogout.bind(this);
     }
 
@@ -11,7 +14,35 @@ class NavbarNotLoggedin extends React.Component {
         this.props.logout();
     }
 
+    update(field) {
+        return e => {
+            this.setState({ [field]: e.currentTarget.value })
+        }
+    }
+
     render() {
+
+        let searchbar = <li></li>
+        let currentSearch = this.state.currentSearch;
+
+        if ((currentSearch !== "") && this.props.books) {
+            searchbar = Object.values(this.props.books).map(book => {
+                if (book.title.toLowerCase().includes(currentSearch.toLowerCase())) {
+                    return (
+                        <Link to={`/books/${book.id}`}>
+                            <li className="navbar-searchbar-results-book"
+                                key={book.id}>
+                                <h1>{book.title}</h1>
+                                <h2>by {book.author}</h2>
+                            </li>
+                        </Link>
+
+                    )
+                }
+            });
+
+        }
+
         return (
             <div className="navbar">
                 <div className="hidden">
@@ -35,7 +66,11 @@ class NavbarNotLoggedin extends React.Component {
                 </div>
 
                 <form className="navbar-searchbar  topnav">
-                    <input type="text" placeholder="Search Books" />
+                    <input type="text" placeholder="Search Books"
+                        value={this.state.currentSearch}
+                        onChange={this.update('currentSearch')}
+                    />
+                    <ul className="navbar-searchbar-results">{searchbar}</ul>
                     <button>
                         <img src={window.searchURL}
                             alt="Search" />

@@ -3,7 +3,9 @@ import NavbarNotLoggedin from './navbarNotLoggedin';
 
 
 const mapStateToProps = (state) => ({
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    books: state.entities.books,
+    users: state.entities.users
 });
 
 

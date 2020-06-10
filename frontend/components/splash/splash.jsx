@@ -44,9 +44,9 @@ class Splash extends React.Component {
         }
     }
 
-    // componentDidMount(){
-    //     this.props.getBooks();
-    // }
+    componentDidMount(){
+        this.props.getBooks();
+    }
 
     render() {
         const { currentUser, login, signup} = this.props;

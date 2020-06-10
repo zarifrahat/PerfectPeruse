@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavbarNotLoggedin from '../navbarNotLoggedin/navbarNotLoggedin';
+import NavbarNotLoggedinContainer from '../navbarNotLoggedin/navbarNotLoggedin_container';
+import NavbarContainer from '../navbar/navbar_container';
 
 
 class Book extends React.Component{
@@ -10,22 +11,23 @@ class Book extends React.Component{
 
     }
     componentDidMount(){
-        
-        console.log(this.props);
-        this.props.getBook(this.props.match.params.bookId);
-       
+        this.props.getBooks();
     }
 
     render(){
-        
-        // const {book} = this.props;
-        console.log(this.props);
+        let applicableNavbar;
+        if (!this.props.sessionId) {
+            applicableNavbar = <NavbarNotLoggedinContainer />
+        } else {
+            applicableNavbar = <NavbarContainer/>
+        }
         
         if(this.props.book){
             const { book } = this.props;
             return(
                 <div className="bookshow">
-                    <NavbarNotLoggedin/>
+                    <div>{applicableNavbar}</div>
+                    
                     <div className="bookshow-info">
                         <div className="bookshow-info-img">
                             <img src={window.harrypotterURL}

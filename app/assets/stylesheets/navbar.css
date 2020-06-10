@@ -184,6 +184,30 @@
     to{right:0;opacity:1}
 }
 
+.navbar-searchbar-results{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    top: 32px;
+    background-color: #F4F1EA;
+    z-index: 10000;
+}
+
+.navbar-searchbar-results-book{
+    border: 1px solid #D8D8D8;
+}
+
+.navbar-searchbar-results-book h1{
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.navbar-searchbar-results-book h2{
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 14px;
+}
+
 @media screen and (max-width: 1220px) {
     .navbar{
         display: flex;
@@ -199,15 +223,28 @@
     }
     .navbar-searchbar{
         height: 32px;
+        position: relative;
     }
+
+
     .bottomnav{
         display: flex;
         width: 100%;
         height: 50%;
         background-color: #F4F1EA;
         justify-content: center;
+        z-index: 5;
     }
 
+    .navbar-searchbar-results{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    top: 32px;
+    background-color: #F4F1EA;
+    z-index: 10000;
+}
 
 }
 
