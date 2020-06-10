@@ -1,0 +1,55 @@
+.bookshow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Merriweather", "Georgia", serif;
+}
+
+.bookshow-info{
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    margin-left: 12%;
+    margin-right: 12%;
+    border-bottom: 1px solid #D8D8D8;
+
+}
+
+.bookshow-info-img img{
+    width: 150px;
+    margin: 20px;
+}
+
+.bookshow-info-text{
+    margin: 20px;
+    line-height: 1.8;
+}
+
+.bookshow-info-text h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.bookshow-info-text h2{
+    font-size: 18px;
+}
+
+.bookshow-info-text p{
+    font-size: 15px;
+}
+
+.bookshow-reviews{
+    display: flex;
+    justify-content: center;
+}
+
+.bookshow-reviews{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    margin-left: 12%;
+    margin-right: 12%;
+    border-bottom: 1px solid #D8D8D8;
+}
+

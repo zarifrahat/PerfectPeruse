@@ -36,8 +36,9 @@ class UsersHome extends React.Component {
 
                     <div className="usershome-main-left-currentlyreading">
                         <h1>CURRENTLY READING</h1>
-                        <img src={window.ofmiceandmenURL}
-                            alt="Of Mice and Men" />  
+                        <Link to={`/books/7`}><img src={window.ofmiceandmenURL}
+                            alt="Of Mice and Men" /></Link>
+                         
                             <div>
                                 <p>Of Mice and Men</p>
                                 <p>By John Steinbeck</p>

@@ -20,8 +20,8 @@ class Navbar extends React.Component{
                 </div>
                 
                 <div className="navbar-logo topnav">
-                    <img src={window.perfectperuseURL}
-                        alt="perfectperuse" />
+                    <Link to="/"><img src={window.perfectperuseURL}
+                        alt="perfectperuse" /></Link>
                 </div>
 
                 <div className="navbar-leftbar bottomnav">

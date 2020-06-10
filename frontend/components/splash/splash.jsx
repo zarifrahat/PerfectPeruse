@@ -43,6 +43,11 @@ class Splash extends React.Component {
             this.setState({[field]: e.currentTarget.value})
         }
     }
+
+    // componentDidMount(){
+    //     this.props.getBooks();
+    // }
+
     render() {
         const { currentUser, login, signup} = this.props;
         return (
@@ -107,26 +112,26 @@ class Splash extends React.Component {
                                         He discovered:
                                     </div>
                                 </div>
-                               
+                                <Link to={`/books/7`}></Link>
                                 
                                 <div className="splash-main-discover-booklinks">
-                                    <img src={window.harrypotterURL} 
-                                    alt="Harry Potter and the Sorcerer's Stone" />
+                                    <Link to={`/books/2`}><img src={window.harrypotterURL} 
+                                    alt="Harry Potter and the Sorcerer's Stone" /></Link>
 
-                                    <img src={window.agameofthronesURL}
-                                        alt="A Game of Thrones" />
+                                    <Link to={`/books/3`}><img src={window.agameofthronesURL}
+                                        alt="A Game of Thrones" /></Link>
 
-                                    <img src={window.awizardofearthseaURL}
-                                        alt="A Wizard of Earthsea" />
+                                    <Link to={`/books/6`}><img src={window.awizardofearthseaURL}
+                                        alt="A Wizard of Earthsea" /></Link>
 
-                                    <img src={window.theemperorssoulURL}
-                                        alt="The Emperors Soul" />
+                                    <Link to={`/books/13`}><img src={window.theemperorssoulURL}
+                                        alt="The Emperors Soul" /></Link>
 
                                     <img className="arrow" src={window.discoveryarrowURL}
                                         alt="arrow"/>
 
-                                    <img src={window.thenameofthewindURL}
-                                        alt="The Name of the Wind" />
+                                    <Link to={`/books/5`}><img src={window.thenameofthewindURL}
+                                        alt="The Name of the Wind" /></Link>
                                     <div>
                                         Fantasy
                                     </div>
@@ -144,23 +149,23 @@ class Splash extends React.Component {
                                 </div>
 
                                 <div className="splash-main-discover-booklinks">
-                                    <img src={window.endersgameURL}
-                                        alt="Enders Game" />
+                                    <Link to={`/books/4`}><img src={window.endersgameURL}
+                                        alt="Enders Game" /></Link>
 
-                                    <img src={window.a2001URL}
-                                        alt="2001" />
+                                    <Link to={`/books/12`}><img src={window.a2001URL}
+                                        alt="2001" /></Link>
 
-                                    <img src={window.foundationURL}
-                                        alt="Foundation" />
+                                    <Link to={`/books/11`}><img src={window.foundationURL}
+                                        alt="Foundation" /></Link>
 
-                                    <img src={window.a112263URL}
-                                        alt="11/22/63" />
+                                    <Link to={`/books/10`}><img src={window.a112263URL}
+                                        alt="11/22/63" /></Link>
 
                                     <img className="arrow" src={window.discoveryarrowURL}
                                         alt="arrow" />
 
-                                    <img src={window.duneURL}
-                                        alt="Dune" />
+                                    <Link to={`/books/14`}><img src={window.duneURL}
+                                        alt="Dune" /></Link>
 
                                     <div>
                                         Science Fiction

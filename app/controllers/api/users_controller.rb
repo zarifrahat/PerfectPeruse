@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             login(@user)
-            render "api/users/show"
+            render :show
         else
             flash[:errors] = @user.errors.full_messages
 
