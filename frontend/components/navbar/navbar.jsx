@@ -88,8 +88,9 @@ class Navbar extends React.Component{
                 <div className="navbar-rightbar  topnav">
                     <ul >
                         <li>
-                            <img src={window.github2URL}
-                                alt="Github" /> 
+                            <a href="https://github.com/zarifrahat"><img src={window.github2URL}
+                                alt="Github" /> </a>
+                            
                         </li>
                         <li>                        
                             <a href="https://www.linkedin.com/company/goodreads-com/">

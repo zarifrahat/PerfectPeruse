@@ -44,6 +44,7 @@ class Book extends React.Component{
                             <p>
                                 {book.summary}
                             </p>
+                            
                         </div>
 
                     </div>
