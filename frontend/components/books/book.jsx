@@ -30,8 +30,8 @@ class Book extends React.Component{
                     
                     <div className="bookshow-info">
                         <div className="bookshow-info-img">
-                            <img src={window.harrypotterURL}
-                                alt="Harry Potter and the Sorcerer's Stone" />
+                            <img src={book.photoUrl}
+                                alt={book.title} />
                         </div>
 
                         <div className="bookshow-info-text">

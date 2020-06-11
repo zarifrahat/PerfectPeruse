@@ -115,22 +115,22 @@ class Splash extends React.Component {
                                 <Link to={`/books/7`}></Link>
                                 
                                 <div className="splash-main-discover-booklinks">
-                                    <Link to={`/books/2`}><img src={window.harrypotterURL} 
+                                    <Link to={`/books/22`}><img src={window.harrypotterURL} 
                                     alt="Harry Potter and the Sorcerer's Stone" /></Link>
 
-                                    <Link to={`/books/3`}><img src={window.agameofthronesURL}
+                                    <Link to={`/books/23`}><img src={window.agameofthronesURL}
                                         alt="A Game of Thrones" /></Link>
 
-                                    <Link to={`/books/6`}><img src={window.awizardofearthseaURL}
+                                    <Link to={`/books/26`}><img src={window.awizardofearthseaURL}
                                         alt="A Wizard of Earthsea" /></Link>
 
-                                    <Link to={`/books/13`}><img src={window.theemperorssoulURL}
+                                    <Link to={`/books/33`}><img src={window.theemperorssoulURL}
                                         alt="The Emperors Soul" /></Link>
 
                                     <img className="arrow" src={window.discoveryarrowURL}
                                         alt="arrow"/>
 
-                                    <Link to={`/books/5`}><img src={window.thenameofthewindURL}
+                                    <Link to={`/books/25`}><img src={window.thenameofthewindURL}
                                         alt="The Name of the Wind" /></Link>
                                     <div>
                                         Fantasy
@@ -149,22 +149,22 @@ class Splash extends React.Component {
                                 </div>
 
                                 <div className="splash-main-discover-booklinks">
-                                    <Link to={`/books/4`}><img src={window.endersgameURL}
+                                    <Link to={`/books/24`}><img src={window.endersgameURL}
                                         alt="Enders Game" /></Link>
 
-                                    <Link to={`/books/12`}><img src={window.a2001URL}
+                                    <Link to={`/books/32`}><img src={window.a2001URL}
                                         alt="2001" /></Link>
 
-                                    <Link to={`/books/11`}><img src={window.foundationURL}
+                                    <Link to={`/books/31`}><img src={window.foundationURL}
                                         alt="Foundation" /></Link>
 
-                                    <Link to={`/books/10`}><img src={window.a112263URL}
+                                    <Link to={`/books/30`}><img src={window.a112263URL}
                                         alt="11/22/63" /></Link>
 
                                     <img className="arrow" src={window.discoveryarrowURL}
                                         alt="arrow" />
 
-                                    <Link to={`/books/14`}><img src={window.duneURL}
+                                    <Link to={`/books/34`}><img src={window.duneURL}
                                         alt="Dune" /></Link>
 
                                     <div>
