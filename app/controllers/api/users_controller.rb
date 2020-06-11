@@ -12,7 +12,6 @@ class Api::UsersController < ApplicationController
             render :show
         else
             flash[:errors] = @user.errors.full_messages
-
         end
     end
 
