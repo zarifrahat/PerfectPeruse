@@ -13,6 +13,7 @@ const mapDispatchToProps = dispatch => ({
     login: (user) => dispatch(login(user)),
     signup: (user) => dispatch(signup(user)),
     getBooks: () => dispatch(getBooks())
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Splash);

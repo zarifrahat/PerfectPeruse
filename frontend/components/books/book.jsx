@@ -24,6 +24,7 @@ class Book extends React.Component{
         
         if(this.props.book){
             const { book } = this.props;
+            debugger
             return(
                 <div className="bookshow">
                     <div>{applicableNavbar}</div>
@@ -32,6 +33,17 @@ class Book extends React.Component{
                         <div className="bookshow-info-img">
                             <img src={book.photoUrl}
                                 alt={book.title} />
+
+                            <div className="bookshow-info-img-dropdown">
+                                <div className="bookshow-info-img-dropdown"
+                                    onClick={() => (document.getElementsByClassName("bookshow-info-img-dropdown-content")[0].style.display = "block")}>
+                                    Want to Read</div>
+                                <div className="bookshow-info-img-dropdown-content">
+                                    <div>Read</div>
+                                    <div>Currently Reading</div>
+                                    <div>Want to Read</div>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="bookshow-info-text">

@@ -15,8 +15,13 @@
 
 }
 
+.bookshow-info-img{
+    display: flex;
+    flex-direction: column;
+}
+
 .bookshow-info-img img{
-    width: 150px;
+    width: 300px;
     margin: 20px;
 }
 
@@ -51,5 +56,14 @@
     margin-left: 12%;
     margin-right: 12%;
     border-bottom: 1px solid #D8D8D8;
+}
+
+
+.bookshow-info-img-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  z-index: 1;
 }
 

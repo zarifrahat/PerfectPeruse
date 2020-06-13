@@ -16,6 +16,10 @@ class UsersHome extends React.Component {
         this.props.logout();
     }
 
+    componentDidMount(){
+        this.props.getBookshelves(this.props.sessionId);
+    }
+
     render(){
         const {currentUser, logout} = this.props
         return(

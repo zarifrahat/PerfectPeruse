@@ -8,6 +8,10 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
+            Bookshelf.create(bookshelf_name: "All", user_id: @user.id)
+            Bookshelf.create(bookshelf_name: "Read", user_id: @user.id)
+            Bookshelf.create(bookshelf_name: "Currently Reading", user_id: @user.id)
+            Bookshelf.create(bookshelf_name: "Want to Read", user_id: @user.id)
             login(@user)
             render :show
         else

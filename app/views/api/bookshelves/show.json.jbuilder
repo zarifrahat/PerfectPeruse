@@ -1,1 +1,1 @@
-json.extract! @bookshelf, :author,:bookshelf_name, :user_id
+json.extract! @bookshelf, :bookshelf_name, :user_id, :books

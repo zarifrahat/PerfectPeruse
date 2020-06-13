@@ -1,7 +1,8 @@
-export const getBookshelves = () => (
+export const getBookshelves = (id) => (
     $.ajax({
         method: 'GET',
-        url: `/api/bookshelves`
+        url: `/api/users/${id}/bookshelves`
+
     })
 );
 

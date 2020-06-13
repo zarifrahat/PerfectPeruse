@@ -1,13 +1,14 @@
 class Api::BookshelvesController < ApplicationController
+    before_action :ensure_logged_in
 
     def index
-        @bookshelves = Bookshelf.where(user_id: params[:user_id])
+        @bookshelves = Bookshelf.includes(booktoshelves: [:book]).where(user_id: params[:user_id])
         render :index
     end
 
 
     def show
-        @bookshelf = Bookshelf.find_by(id: params[:id])
+        @bookshelf = Bookshelf.includes(booktoshelves: [:book]).find_by(id: params[:id])
         render :show
     end
 
@@ -43,7 +44,8 @@ class Api::BookshelvesController < ApplicationController
     end
 
 
-    private bookshelf_params
+    private 
+    def bookshelf_params
         params.require(:bookshelf).permit(:bookshelf_name, :user_id)
     end
 end

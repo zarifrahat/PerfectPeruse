@@ -29,14 +29,14 @@ const receiveBookshelfErrors = (errors) => {
 
 
 export const getBookshelf = (id) => dispatch => {
-    return BookApiUtil.getBookshelf(id)
+    return BookshelfApiUtil.getBookshelf(id)
         .then(bookshelf => dispatch(receiveBookshelf(bookshelf)),
             error => dispatch(receiveBookshelfErrors(error.responseJSON))
         )
 }
 
-export const getBookshelves = () => dispatch => {
-    return BookApiUtil.getBookshelves()
+export const getBookshelves = (id) => dispatch => {
+    return BookshelfApiUtil.getBookshelves(id)
         .then(bookshelves => dispatch(receiveBookshelves(bookshelves)),
             error => dispatch(receiveBookshelfErrors(error.responseJSON))
         )
@@ -44,14 +44,14 @@ export const getBookshelves = () => dispatch => {
 
 
 export const createBookshelf = (bookshelf) => dispatch => {
-    return BookApiUtil.createBookshelf(bookshelf)
+    return BookshelfApiUtil.createBookshelf(bookshelf)
         .then(bookshelf => dispatch(receiveBookshelf(bookshelf)),
             error => dispatch(receiveBookshelfErrors(error.responseJSON))
         )
 }
 
 export const editBookshelf = (bookshelf) => dispatch => {
-    return BookApiUtil.editBookshelf(bookshelf)
+    return BookshelfApiUtil.editBookshelf(bookshelf)
         .then(bookshelf => dispatch(receiveBookshelf(bookshelf)),
             error => dispatch(receiveBookshelfErrors(error.responseJSON))
         )
@@ -60,7 +60,7 @@ export const editBookshelf = (bookshelf) => dispatch => {
 
 
 export const deleteBookshelf = (bookshelf) => dispatch => {
-    return BookApiUtil.deleteBookshelf(bookshelf)
+    return BookshelfApiUtil.deleteBookshelf(bookshelf)
         .then(bookshelves => dispatch(receiveBookshelves(bookshelves)),
             error => dispatch(receiveBookshelfErrors(error.responseJSON))
         )

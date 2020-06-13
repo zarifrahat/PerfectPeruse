@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from "./components/root";
 import * as sessionActions from './actions/session_actions';
 import * as bookActions from './actions/book_actions';
+import * as bookshelfActions from './actions/bookshelf_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -32,6 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.getBooks = bookActions.getBooks;
     window.getState = store.getState;
     window.dispatch = store.dispatch; 
- 
+    window.getBookshelves = bookshelfActions.getBookshelves;
 
 });
