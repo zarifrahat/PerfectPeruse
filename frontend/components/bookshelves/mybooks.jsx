@@ -11,6 +11,7 @@ class myBooks extends React.Component {
         this.state = {
             selectedBookshelf: "All"
         }
+        this.props.getBooks();
     }
 
     componentDidMount() {
@@ -18,6 +19,9 @@ class myBooks extends React.Component {
     }
 
     render(){
+        // debugger
+        this.props.books;
+        // debugger
         if (this.props.bookshelves[this.state.selectedBookshelf]) {
             const { bookshelves } = this.props;
             let allbookshelves = <li></li> ;
@@ -31,7 +35,7 @@ class myBooks extends React.Component {
                     <li key={book.id}
                         className="myBooks-main-showbooks-images">
                          <Link to={`/books/${book.id}`}> 
-                            <img src={book.photoUrl}
+                            <img src={this.props.books[book.id].photoUrl}
                                 alt={book.title} />
                         </Link>
                     </li>
@@ -47,6 +51,9 @@ class myBooks extends React.Component {
                             <ul className="myBooks-main-bookshelves-list">
                                 {allbookshelves}
                             </ul>
+                            <button>
+                                Add shelf
+                            </button>
                         </div>
                         <div className="myBooks-main-showbooks">
                             <ul className="myBooks-main-showbooks-list">
@@ -58,7 +65,12 @@ class myBooks extends React.Component {
                 </div>
             )
         } else{
-            return null;
+            return (
+                <div className="myBooks">
+                    <NavbarContainer />
+                    <Footer />
+                </div>
+            )
         }
     }
 }

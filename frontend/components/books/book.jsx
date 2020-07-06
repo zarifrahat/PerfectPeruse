@@ -12,6 +12,7 @@ class Book extends React.Component{
     }
     componentDidMount(){
         this.props.getBooks();
+        this.props.getBookshelves(this.props.sessionId);
     }
 
     render(){
@@ -22,9 +23,17 @@ class Book extends React.Component{
             applicableNavbar = <NavbarContainer/>
         }
         
-        if(this.props.book){
+        if (this.props.book && this.props.bookshelves){
             const { book } = this.props;
-            debugger
+    
+            let usersBookshelvesList = Object.keys(this.props.bookshelves).map(bookshelf => {
+                if(bookshelf !== "All"){
+                    return <div onClick={this.props.bookshelves[bookshelf].id}>{bookshelf}</div>
+
+                }
+            
+            });
+    
             return(
                 <div className="bookshow">
                     <div>{applicableNavbar}</div>
@@ -34,14 +43,12 @@ class Book extends React.Component{
                             <img src={book.photoUrl}
                                 alt={book.title} />
 
-                            <div className="bookshow-info-img-dropdown">
-                                <div className="bookshow-info-img-dropdown"
-                                    onClick={() => (document.getElementsByClassName("bookshow-info-img-dropdown-content")[0].style.display = "block")}>
-                                    Want to Read</div>
-                                <div className="bookshow-info-img-dropdown-content">
-                                    <div>Read</div>
-                                    <div>Currently Reading</div>
-                                    <div>Want to Read</div>
+                            <div className="bookshow-info-dropdown">
+                                <div className="bookshow-info-dropdown"
+                                    onClick={() => (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "block")}>
+                                    ---------</div>
+                                <div className="bookshow-info-dropdown-content">
+                                    {usersBookshelvesList}
                                 </div>
                             </div>
                         </div>

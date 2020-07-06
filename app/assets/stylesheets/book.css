@@ -59,8 +59,8 @@
 }
 
 
-.bookshow-info-img-dropdown-content {
-  display: none;
+.bookshow-info-dropdown-content {
+  display: inline-block;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 100px;
