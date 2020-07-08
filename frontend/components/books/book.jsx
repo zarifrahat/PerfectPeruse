@@ -14,22 +14,15 @@ class Book extends React.Component{
         this.props.getBooks();
         this.props.getBookshelves(this.props.sessionId);
     }
-    addBookToBookshelfOnclick(bookshelf){
-        if (bookshelf === "Read"){
-            this.props.addBookToBookshelf(this.props.bookshelves[bookshelf].id, this.props.bookId)
-            this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
+    addBookToBookshelfOnclick(){
+        this.props.addBookToBookshelf(parseInt(this.props.bookshelves[event.srcElement.id].id, 10), parseInt(this.props.bookId, 10))
+        this.props.addBookToBookshelf(parseInt(this.props.bookshelves["All"].id, 10), parseInt(this.props.bookId, 10))
+        if (event.srcElement.id === "Read"){
             //REMOVE FROM OTHERS
-        } else if (bookshelf === "Currently Reading"){
-            this.props.addBookToBookshelf(this.props.bookshelves[bookshelf].id, this.props.bookId)
-            this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
+        } else if (event.srcElement.id === "Currently Reading"){
             //REMOVE FROM OTHERS
-        } else if (bookshelf === "Want to Read") {
-            this.props.addBookToBookshelf(this.props.bookshelves[bookshelf].id, this.props.bookId)
-            this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
+        } else if (event.srcElement.id === "Want to Read") {
             //REMOVE FROM OTHERS
-        } else {
-            this.props.addBookToBookshelf(this.props.bookshelves[bookshelf].id, this.props.bookId)
-            this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
         }
     }
 
@@ -46,8 +39,7 @@ class Book extends React.Component{
     
             let usersBookshelvesList = Object.keys(this.props.bookshelves).map(bookshelf => {
                 if(bookshelf !== "All"){
-                    return <div onClick={this.addBookToBookshelfOnclick(bookshelf)}>{bookshelf}</div>
-
+                    return <div id={bookshelf} onClick={this.addBookToBookshelfOnclick}>{bookshelf}</div>
                 }
             
             });

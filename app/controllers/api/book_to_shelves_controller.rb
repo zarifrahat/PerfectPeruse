@@ -1,4 +1,4 @@
-class Api::BookToShelves < ApplicationController
+class Api::BookToShelvesController < ApplicationController
 
     def create
         @book_to_shelf = BookToShelf.new(book_to_shelves_params)

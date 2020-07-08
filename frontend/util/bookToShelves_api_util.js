@@ -3,8 +3,10 @@ export const addBookToBookshelf = (bookshelfId, bookId) => (
         method: 'POST',
         url: `/api/book_to_shelves`,
         data: {
-            bookshelf_id: bookshelfId,
-            book_id: bookId
+            bookToShelf:{
+                bookshelf_id: bookshelfId,
+                book_id: bookId
+            }
         }
     })
 );
@@ -14,8 +16,10 @@ export const removeBookFromBookshelf = (bookshelfId, bookId) => (
         method: 'DELETE',
         url: `/api/book_to_shelves`,
         data: {
-            bookshelf_id: bookshelfId,
-            book_id: bookId
+            bookToShelf: {
+                bookshelf_id: bookshelfId,
+                book_id: bookId
+            }
         }
     })
 );

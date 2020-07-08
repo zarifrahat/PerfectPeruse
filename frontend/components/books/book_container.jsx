@@ -3,6 +3,7 @@ import Book from './book';
 import {getBook} from '../../actions/book_actions';
 import {getBooks} from '../../actions/book_actions';
 import { getBookshelves} from '../../actions/bookshelf_actions';
+import { addBookToBookshelf} from '../../actions/bookToShelves_actions';
 import { logout } from '../../actions/session_actions';
 
 
