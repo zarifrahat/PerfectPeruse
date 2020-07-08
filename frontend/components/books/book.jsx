@@ -8,13 +8,13 @@ class Book extends React.Component{
     constructor(props){
         super(props);
         this.book = {}
-        this.addBookToBookshelf = this.addBookToBookshelf.bind(this);
+        this.addBookToBookshelfOnclick = this.addBookToBookshelfOnclick.bind(this);
     }
     componentDidMount(){
         this.props.getBooks();
         this.props.getBookshelves(this.props.sessionId);
     }
-    addBookToBookshelf(bookshelf){
+    addBookToBookshelfOnclick(bookshelf){
         if (bookshelf === "Read"){
             this.props.addBookToBookshelf(this.props.bookshelves[bookshelf].id, this.props.bookId)
             this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
@@ -46,7 +46,7 @@ class Book extends React.Component{
     
             let usersBookshelvesList = Object.keys(this.props.bookshelves).map(bookshelf => {
                 if(bookshelf !== "All"){
-                    return <div onClick={this.addBookToBookshelf(bookshelf)}>{bookshelf}</div>
+                    return <div onClick={this.addBookToBookshelfOnclick(bookshelf)}>{bookshelf}</div>
 
                 }
             

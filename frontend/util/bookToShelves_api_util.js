@@ -8,3 +8,14 @@ export const addBookToBookshelf = (bookshelfId, bookId) => (
         }
     })
 );
+
+export const removeBookFromBookshelf = (bookshelfId, bookId) => (
+    $.ajax({
+        method: 'DELETE',
+        url: `/api/book_to_shelves`,
+        data: {
+            bookshelf_id: bookshelfId,
+            book_id: bookId
+        }
+    })
+);

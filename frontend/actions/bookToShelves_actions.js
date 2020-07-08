@@ -23,3 +23,10 @@ export const addBookToBookshelf = (bookshelfId, bookId) => dispatch => {
             error => dispatch(receiveBookshelfErrors(error.responseJSON))
         )
 }
+export const removeBookFromBookshelf = (bookshelfId, bookId) => dispatch => {
+    return BookToShelvesApiUtil.removeBookFromBookshelf(bookshelfId, bookId)
+        .then(bookToShelf => dispatch(receiveBookshelf(bookToShelf)),
+            error => dispatch(receiveBookshelfErrors(error.responseJSON))
+        )
+}
+
