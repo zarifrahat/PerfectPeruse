@@ -8,7 +8,7 @@ class Book extends React.Component{
     constructor(props){
         super(props);
         this.book = {}
-
+        this.addBookToBookshelf = this.addBookToBookshelf.bind(this);
     }
     componentDidMount(){
         this.props.getBooks();
@@ -46,7 +46,7 @@ class Book extends React.Component{
     
             let usersBookshelvesList = Object.keys(this.props.bookshelves).map(bookshelf => {
                 if(bookshelf !== "All"){
-                    return <div onClick={this.props.bookshelves[bookshelf].id}>{bookshelf}</div>
+                    return <div onClick={this.addBookToBookshelf(bookshelf)}>{bookshelf}</div>
 
                 }
             
