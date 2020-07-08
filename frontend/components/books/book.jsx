@@ -14,6 +14,24 @@ class Book extends React.Component{
         this.props.getBooks();
         this.props.getBookshelves(this.props.sessionId);
     }
+    addBookToBookshelf(bookshelf){
+        if (bookshelf === "Read"){
+            this.props.addBookToBookshelf(this.props.bookshelves[bookshelf].id, this.props.bookId)
+            this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
+            //REMOVE FROM OTHERS
+        } else if (bookshelf === "Currently Reading"){
+            this.props.addBookToBookshelf(this.props.bookshelves[bookshelf].id, this.props.bookId)
+            this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
+            //REMOVE FROM OTHERS
+        } else if (bookshelf === "Want to Read") {
+            this.props.addBookToBookshelf(this.props.bookshelves[bookshelf].id, this.props.bookId)
+            this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
+            //REMOVE FROM OTHERS
+        } else {
+            this.props.addBookToBookshelf(this.props.bookshelves[bookshelf].id, this.props.bookId)
+            this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
+        }
+    }
 
     render(){
         let applicableNavbar;
