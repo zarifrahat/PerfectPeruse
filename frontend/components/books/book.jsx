@@ -19,11 +19,19 @@ class Book extends React.Component{
         this.props.addBookToBookshelf(parseInt(this.props.bookshelves["All"].id, 10), parseInt(this.props.bookId, 10))
         if (event.srcElement.id === "Read"){
             //REMOVE FROM OTHERS
+            this.props.removeBookFromBookshelf(parseInt(this.props.bookshelves["Currently Reading"].id, 10), parseInt(this.props.bookId, 10))
+            this.props.removeBookFromBookshelf(parseInt(this.props.bookshelves["Want to Read"].id, 10), parseInt(this.props.bookId, 10))
+            // removeBookFromBookshelf(bookshelfId, bookId)
         } else if (event.srcElement.id === "Currently Reading"){
             //REMOVE FROM OTHERS
+            this.props.removeBookFromBookshelf(parseInt(this.props.bookshelves["Read"].id, 10), parseInt(this.props.bookId, 10))
+            this.props.removeBookFromBookshelf(parseInt(this.props.bookshelves["Want to Read"].id, 10), parseInt(this.props.bookId, 10))
         } else if (event.srcElement.id === "Want to Read") {
             //REMOVE FROM OTHERS
+            this.props.removeBookFromBookshelf(parseInt(this.props.bookshelves["Currently Reading"].id, 10), parseInt(this.props.bookId, 10))
+            this.props.removeBookFromBookshelf(parseInt(this.props.bookshelves["Read"].id, 10), parseInt(this.props.bookId, 10))
         }
+        this.props.getBookshelves(this.props.sessionId);
     }
 
     render(){
@@ -39,7 +47,9 @@ class Book extends React.Component{
     
             let usersBookshelvesList = Object.keys(this.props.bookshelves).map(bookshelf => {
                 if(bookshelf !== "All"){
-                    return <div id={bookshelf} onClick={this.addBookToBookshelfOnclick}>{bookshelf}</div>
+                    return <div id={bookshelf} 
+                    key={this.props.bookshelves[bookshelf].id}
+                    onClick={this.addBookToBookshelfOnclick}>{bookshelf}</div>
                 }
             
             });
