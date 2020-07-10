@@ -15,8 +15,8 @@ class Book extends React.Component{
         this.props.getBookshelves(this.props.sessionId);
     }
     addBookToBookshelfOnclick(){
-        this.props.addBookToBookshelf(parseInt(this.props.bookshelves[event.srcElement.id].id, 10), parseInt(this.props.bookId, 10))
-        this.props.addBookToBookshelf(parseInt(this.props.bookshelves["All"].id, 10), parseInt(this.props.bookId, 10))
+        this.props.addBookToBookshelf(this.props.bookshelves[event.srcElement.id].id, this.props.bookId)
+        this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
         if (event.srcElement.id === "Read"){
             //REMOVE FROM OTHERS
             this.props.removeBookFromBookshelf(parseInt(this.props.bookshelves["Currently Reading"].id, 10), parseInt(this.props.bookId, 10))

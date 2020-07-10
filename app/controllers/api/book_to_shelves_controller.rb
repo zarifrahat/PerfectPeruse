@@ -12,7 +12,7 @@ class Api::BookToShelvesController < ApplicationController
     end
 
     def destroy
-        @book_to_shelf = BookToShelf.find_by(bookshelf_id: params[:bookshelf_id], book_id: params[:book_id])
+        @book_to_shelf = BookToShelf.find(params[:id])
         if @book_to_shelf.destroy
             @bookshelves = Bookshelf.includes(booktoshelves: [:book]).where(user_id: params[:user_id])
         else

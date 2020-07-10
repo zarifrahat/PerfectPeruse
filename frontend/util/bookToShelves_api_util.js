@@ -14,7 +14,7 @@ export const addBookToBookshelf = (bookshelfId, bookId) => (
 export const removeBookFromBookshelf = (bookshelfId, bookId) => (
     $.ajax({
         method: 'DELETE',
-        url: `/api/book_to_shelves`,
+        url: `/api/book_to_shelves/1`,
         data: {
             bookToShelf: {
                 bookshelf_id: bookshelfId,
