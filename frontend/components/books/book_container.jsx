@@ -3,7 +3,7 @@ import Book from './book';
 import {getBook} from '../../actions/book_actions';
 import {getBooks} from '../../actions/book_actions';
 import { getBookshelves} from '../../actions/bookshelf_actions';
-import { addBookToBookshelf, removeBookFromBookshelf} from '../../actions/bookToShelves_actions';
+import { getAllBookToBookshelf, addBookToBookshelf, removeBookFromBookshelf} from '../../actions/bookToShelves_actions';
 import { logout } from '../../actions/session_actions';
 
 
@@ -20,6 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     getBooks: () => dispatch(getBooks()),
     getBookshelves: (id) => dispatch(getBookshelves(id)),
+    getAllBookToBookshelf: () => dispatch(getAllBookToBookshelf()),
     addBookToBookshelf: (bookshelfId, bookId) => dispatch(addBookToBookshelf(bookshelfId, bookId)),
     removeBookFromBookshelf: (bookshelfId, bookId) => dispatch(removeBookFromBookshelf(bookshelfId, bookId)),
     logout: () => dispatch(logout())

@@ -1,10 +1,10 @@
-import { RECEIVE_BOOK_TO_SHELF } from '../actions/bookToShelves_actions';
+import { RECEIVE_BOOK_TO_SHELVES } from '../actions/bookToShelves_actions';
 
 const bookToShelvesReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
-        case RECEIVE_BOOK_TO_SHELF:
-            return action.bookshelves;
+        case RECEIVE_BOOK_TO_SHELVES:
+            return action.bookToShelves;
         default:
             return state;
     }

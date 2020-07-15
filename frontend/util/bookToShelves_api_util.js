@@ -1,3 +1,9 @@
+export const getAllBookToBookshelf = (bookshelfId, bookId) => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/book_to_shelves`,
+    })
+);
 export const addBookToBookshelf = (bookshelfId, bookId) => (
     $.ajax({
         method: 'POST',

@@ -13,6 +13,7 @@ class Book extends React.Component{
     componentDidMount(){
         this.props.getBooks();
         this.props.getBookshelves(this.props.sessionId);
+        this.props.getAllBookToBookshelf();
     }
     addBookToBookshelfOnclick(){
         this.props.addBookToBookshelf(this.props.bookshelves[event.srcElement.id].id, this.props.bookId)

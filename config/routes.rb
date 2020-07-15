@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :books, only: [:show, :index] 
     resources :bookshelves, only: [:show, :create, :update, :destroy]
-    resources :book_to_shelves, only: [:create, :destroy]
+    resources :book_to_shelves, only: [:index, :create, :destroy]
   end
 end
