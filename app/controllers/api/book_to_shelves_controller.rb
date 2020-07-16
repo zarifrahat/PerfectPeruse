@@ -22,7 +22,6 @@ class Api::BookToShelvesController < ApplicationController
     def destroy
         @book_to_shelf = BookToShelf.find(params[:id])
         if @book_to_shelf.destroy
-            @bookshelves = Bookshelf.includes(booktoshelves: [:book]).where(user_id: params[:user_id])
         else
             render json: ["Couldn't remove book"], status: 422 
         end
