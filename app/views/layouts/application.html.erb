@@ -7,6 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="PerfectPeruse" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://perfectperuse.herokuapp.com/#/" />
+    <meta property="og:image" content="https://imgur.com/xgL9SdK" />
+    <meta property="og:description" content="A fullstack app based on the social cataloging website Goodreads. Allows users to search the database of books to create personalized bookshelves and review books!" />
 
     <script type="text/javascript">
         window.perfectperuseURL = "<%= image_url('perfectperuse.png') %>";
