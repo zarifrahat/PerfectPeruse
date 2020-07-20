@@ -30,7 +30,6 @@ class UsersHome extends React.Component {
                 <br />
                 <br />
                 {/* <h1>Hello, {this.props.currentUser.username}</h1> */}
-                <button onClick={this.handleLogout}>Log out</button>
                 <main className="usershome-main">
                 <div className="usershome-main-left">
 
