@@ -57,12 +57,18 @@
     margin-right: 12%;
     border-bottom: 1px solid #D8D8D8;
 }
-
+.bookshow-info-dropdown-button{
+    background-color: #F2F2F2;
+    border: none;
+    cursor: pointer;
+    border:  1px solid #D6D0C4;
+    border-radius: 3px;
+}
 
 .bookshow-info-dropdown-content {
-  display: inline-block;
+  display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: white;
   min-width: 100px;
   z-index: 1;
 }

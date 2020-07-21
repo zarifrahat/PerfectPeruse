@@ -5,7 +5,7 @@ export const RECEIVE_BOOK_TO_SHELF = "RECEIVE_BOOK_TO_SHELF";
 export const RECEIVE_BOOK_TO_SHELF_ERRORS = "RECEIVE_BOOK_TO_SHELF_ERRORS";
 
 const receiveBookToShelves = (bookToShelves) => {
-    debugger
+    
     return {
         type: RECEIVE_BOOK_TO_SHELVES,
         bookToShelves: bookToShelves

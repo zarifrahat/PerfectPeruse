@@ -18,6 +18,7 @@ class myBooks extends React.Component {
     }
     
     componentDidMount() {
+        this.props.getBooks();
         this.props.getBookshelves(this.props.sessionId);
     }
 
@@ -28,30 +29,30 @@ class myBooks extends React.Component {
     handleSubmit(event){
         event.preventDefault();
         console.log(this.state)
-        debugger
+        
         console.log("new bookshelf added!")
-        debugger
+        
         const bookshelf = {
             bookshelf_name: this.state.addShelf,
             user_id: this.props.sessionId
         };
-        debugger
+        
         this.props.createBookshelf(bookshelf);
-        debugger
+        
         this.setState({ addShelf: "" });
     }
 
     render(){
-        // debugger
+        console.log("Loaded ONE TIME")
         console.log(this.props.bookshelves[this.state.selectedBookshelf]);
-        // debugger
-        if (this.props.bookshelves[this.state.selectedBookshelf]) {
+        if (this.props.bookshelves[this.state.selectedBookshelf] && (Object.keys(this.props.books).length !== 0)) {
             const { bookshelves } = this.props;
             let allbookshelves = <li></li> ;
             allbookshelves = Object.values(bookshelves).map(bookshelf => {
                     return <li key={bookshelf.id}
                         onClick={() => this.setState({ selectedBookshelf: bookshelf.bookshelf_name})}>
-                        {bookshelf.bookshelf_name} ({bookshelf.books.length})</li>  
+                        <span>{bookshelf.bookshelf_name} ({bookshelf.books.length})</span>
+                        </li>  
             })
 
             let allBooksForBookshelf = <li></li>
@@ -72,15 +73,15 @@ class myBooks extends React.Component {
                     <NavbarContainer/>
                     <div className="myBooks-main">
                         <div className="myBooks-main-bookshelves">
-                            <h1>My Books</h1>
-                            <h4>Bookshelves</h4>
+                            <h1 >My Books</h1>
+                            <div>Bookshelves</div>
                             <ul className="myBooks-main-bookshelves-list">
                                 {allbookshelves}
                             </ul>
-                                <h4>Add shelf</h4>
+                                <div>Add a shelf:</div>
                                 <form onSubmit={this.handleSubmit}>
-                                    <input type="text" value={this.state.addShelf} onChange={this.handleChange}/>
-                                    <input type="submit" value="add"/>
+                                    <input className="myBooks-main-bookshelves-text" type="text" value={this.state.addShelf} onChange={this.handleChange}/>
+                                <input className="myBooks-main-bookshelves-submit" type="submit" value="add"/>
                                 </form>
                         </div>
                         <div className="myBooks-main-showbooks">

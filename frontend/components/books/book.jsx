@@ -33,12 +33,12 @@ class Book extends React.Component{
     addBookToBookshelfOnclick(){
         this.props.addBookToBookshelf(this.props.bookshelves[event.srcElement.id].id, this.props.bookId)
         let array = this.props.bookshelves["All"]["books"].map(book => book.id).sort()
-        debugger
+        
         if (this.binarySearch(array, parseInt(this.props.bookId, 10)) === -1){
-            debugger
+            
             this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
         }
-        debugger
+        
 
         if (event.srcElement.id === "Read"){
             //REMOVE FROM OTHERS
@@ -72,7 +72,8 @@ class Book extends React.Component{
                 if(bookshelf !== "All"){
                     return <div id={bookshelf} 
                     key={this.props.bookshelves[bookshelf].id}
-                    onClick={this.addBookToBookshelfOnclick}>{bookshelf}</div>
+                    onClick={this.addBookToBookshelfOnclick}>{bookshelf}
+                    </div>
                 }
             
             });
@@ -87,8 +88,10 @@ class Book extends React.Component{
                                 alt={book.title} />
 
                             <div className="bookshow-info-dropdown">
-                                <div className="bookshow-info-dropdown"
-                                    onClick={() => (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "block")}>
+                                <div className="bookshow-info-dropdown-button"
+                                    onMouseEnter={() => (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "block")}
+                                    onMouseLeave={() => (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "none")}
+                                    >
                                     ---------</div>
                                 <div className="bookshow-info-dropdown-content">
                                     {usersBookshelvesList}
