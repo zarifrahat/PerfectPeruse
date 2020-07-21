@@ -12,11 +12,18 @@ class myBooks extends React.Component {
             selectedBookshelf: "All"
         }
         this.props.getBooks();
+        // this.changeBookshelf = this.changeBookshelf.bind(this)
     }
-
+    
     componentDidMount() {
         this.props.getBookshelves(this.props.sessionId);
     }
+
+    // changeBookshelf(){
+    //     debugger
+    //     this.setState({ selectedBookshelf: bookshelfname})
+    //     debugger
+    // }
 
     render(){
         // debugger
@@ -26,7 +33,9 @@ class myBooks extends React.Component {
             const { bookshelves } = this.props;
             let allbookshelves = <li></li> ;
             allbookshelves = Object.values(bookshelves).map(bookshelf => {
-                    return <li key={bookshelf.id}>{bookshelf.bookshelf_name} ({bookshelf.books.length})</li>  
+                    return <li key={bookshelf.id}
+                        onClick={() => this.setState({ selectedBookshelf: bookshelf.bookshelf_name})}>
+                        {bookshelf.bookshelf_name} ({bookshelf.books.length})</li>  
             })
 
             let allBooksForBookshelf = <li></li>

@@ -9,15 +9,37 @@ class Book extends React.Component{
         super(props);
         this.book = {}
         this.addBookToBookshelfOnclick = this.addBookToBookshelfOnclick.bind(this);
+        this.binarySearch = this.binarySearch.bind(this);
     }
     componentDidMount(){
         this.props.getBooks();
         this.props.getBookshelves(this.props.sessionId);
         this.props.getAllBookToBookshelf();
     }
+
+    binarySearch(array, bookId) {
+        if (array.length === 0) return -1;
+
+        const middleOfArray = Math.floor(array.length / 2);
+        if (array[middleOfArray] > bookId) {
+            return this.binarySearch(array.slice(0, middleOfArray), bookId);
+        } else if (array[middleOfArray] < bookId) {
+            const rightSideOfArray = this.binarySearch(array.slice(middleOfArray + 1), bookId);
+            return rightSideOfArray === -1 ? -1 : rightSideOfArray + middleOfArray + 1;
+        } else {
+            return middleOfArray;
+        }
+    }
     addBookToBookshelfOnclick(){
         this.props.addBookToBookshelf(this.props.bookshelves[event.srcElement.id].id, this.props.bookId)
-        this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
+        let array = this.props.bookshelves["All"]["books"].map(book => book.id).sort()
+        debugger
+        if (this.binarySearch(array, parseInt(this.props.bookId, 10)) === -1){
+            debugger
+            this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
+        }
+        debugger
+
         if (event.srcElement.id === "Read"){
             //REMOVE FROM OTHERS
             this.props.removeBookFromBookshelf(parseInt(this.props.bookshelves["Currently Reading"].id, 10), parseInt(this.props.bookId, 10))
