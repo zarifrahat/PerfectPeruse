@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
     def index
-        @all_reviews = Review.where(book_id: params[:book_id])
+        @all_reviews = Review.where(book_id: params[:book_id]).preload(:user)
         render :index
     end
 

@@ -16,11 +16,12 @@ class Reviews extends React.Component {
             if(Object.keys(this.props.reviews).length >0){
                 let allKeys = Object.keys(this.props.reviews)
                 let allReviews = allKeys.map( key =>{
+                    debugger
                     return(
                         <div key={this.props.reviews[key].id}>
-                            <h4>{this.props.reviews[key].user_id}</h4>
-                            <h4>{this.props.reviews[key].rating}</h4>
-                            <h5>{this.props.reviews[key].body}</h5>
+                            <h4>User: {this.props.reviews[key].username}</h4>
+                            <h4>Rating: {this.props.reviews[key].rating}</h4>
+                            <h5>Review: {this.props.reviews[key].body}</h5>
                         </div>
                     )
                     debugger
