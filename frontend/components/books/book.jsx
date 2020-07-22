@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavbarNotLoggedinContainer from '../navbarNotLoggedin/navbarNotLoggedin_container';
 import NavbarContainer from '../navbar/navbar_container';
-
+import Footer from '../footer/footer';
 
 class Book extends React.Component{
     constructor(props){
@@ -31,9 +31,12 @@ class Book extends React.Component{
         }
     }
     addBookToBookshelfOnclick(){
-        this.props.addBookToBookshelf(this.props.bookshelves[event.srcElement.id].id, this.props.bookId)
+        let selectedShelf = this.props.bookshelves[event.srcElement.id]["books"].map(book => book.id).sort()
+        if (this.binarySearch(selectedShelf, parseInt(this.props.bookId, 10)) === -1) {
+            this.props.addBookToBookshelf(this.props.bookshelves[event.srcElement.id].id, this.props.bookId)
+        }
+
         let array = this.props.bookshelves["All"]["books"].map(book => book.id).sort()
-        
         if (this.binarySearch(array, parseInt(this.props.bookId, 10)) === -1){
             
             this.props.addBookToBookshelf(this.props.bookshelves["All"].id, this.props.bookId)
@@ -55,6 +58,7 @@ class Book extends React.Component{
             this.props.removeBookFromBookshelf(parseInt(this.props.bookshelves["Read"].id, 10), parseInt(this.props.bookId, 10))
         }
         this.props.getBookshelves(this.props.sessionId);
+        (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "none")
     }
 
     render(){
@@ -71,12 +75,24 @@ class Book extends React.Component{
             let usersBookshelvesList = Object.keys(this.props.bookshelves).map(bookshelf => {
                 if(bookshelf !== "All"){
                     return <div id={bookshelf} 
+                    className="bookshow-info-dropdown-content-div"
                     key={this.props.bookshelves[bookshelf].id}
-                    onClick={this.addBookToBookshelfOnclick}>{bookshelf}
+                    onClick={this.addBookToBookshelfOnclick}>
+                        {bookshelf}
                     </div>
                 }
             
             });
+
+            let chosenStatus = "Want to Read";
+            let readArray = this.props.bookshelves["Read"]["books"].map(book => book.id).sort()
+            if (this.binarySearch(readArray, parseInt(this.props.bookId, 10)) !== -1) {
+                chosenStatus = "Read";
+            }
+            let currentlyReadingArray = this.props.bookshelves["Currently Reading"]["books"].map(book => book.id).sort()
+            if (this.binarySearch(currentlyReadingArray, parseInt(this.props.bookId, 10)) !== -1) {
+                chosenStatus = "Currently Reading";
+            }
     
             return(
                 <div className="bookshow">
@@ -89,10 +105,14 @@ class Book extends React.Component{
 
                             <div className="bookshow-info-dropdown">
                                 <div className="bookshow-info-dropdown-button"
-                                    onMouseEnter={() => (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "block")}
-                                    onMouseLeave={() => (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "none")}
-                                    >
-                                    ---------</div>
+                                    onClick={() => {
+                                        if (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display === "none"){
+                                            (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "block")
+                                        } else{
+                                            (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "none")
+                                        }
+                                    }}>
+                                    {chosenStatus}</div>
                                 <div className="bookshow-info-dropdown-content">
                                     {usersBookshelvesList}
                                 </div>
@@ -123,8 +143,9 @@ class Book extends React.Component{
 
                         </div>
                     </div>
-
+                    <Footer/>
                 </div>
+
             )
         } else{
             return null;

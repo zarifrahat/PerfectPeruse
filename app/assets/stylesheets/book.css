@@ -57,7 +57,14 @@
     margin-right: 12%;
     border-bottom: 1px solid #D8D8D8;
 }
+
+.bookshow-info-dropdown{
+    margin-left: 20px;
+}
+
 .bookshow-info-dropdown-button{
+    width: 180px;
+    padding: 5px;
     background-color: #F2F2F2;
     border: none;
     cursor: pointer;
@@ -65,11 +72,21 @@
     border-radius: 3px;
 }
 
+
 .bookshow-info-dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 100px;
-  z-index: 1;
+    display: none;
+    position: absolute;
+    padding: 5px;
+    background-color: white;
+    border:  1px solid #D6D0C4;
+    min-width: 200px;
+    z-index: 1;
 }
 
+.bookshow-info-dropdown-content-div{
+    padding: 5px;
+}
+.bookshow-info-dropdown-content-div:hover{
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
