@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavbarNotLoggedinContainer from '../navbarNotLoggedin/navbarNotLoggedin_container';
 import NavbarContainer from '../navbar/navbar_container';
-import Reviews from '../reviews/reviews';
+import ReviewsContainer from '../reviews/reviews_container';
 import Footer from '../footer/footer';
 
 class Book extends React.Component{
@@ -143,7 +143,9 @@ class Book extends React.Component{
                             </p>
 
                         </div>
-                        <Reviews/>
+                        <ReviewsContainer
+                            bookId={this.props.bookId}
+                        />
                     </div>
                     <Footer/>
                 </div>

@@ -24,8 +24,8 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        @book_to_shelf = BookToShelf.find_by(id: params[:id])
-        if @book_to_shelf.destroy
+        @review = Review.find(id: params[:id])
+        if @review.destroy
         else
             render json: ["Couldn't remove review"], status: 422 
         end
