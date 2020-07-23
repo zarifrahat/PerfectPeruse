@@ -16,22 +16,41 @@ class Reviews extends React.Component {
             if(Object.keys(this.props.reviews).length >0){
                 let allKeys = Object.keys(this.props.reviews)
                 let allReviews = allKeys.map( key =>{
-                    debugger
+                    let star = "★";
+                    let clearStar = "☆";
+                    let orangeStars = star.repeat(this.props.reviews[key].rating)
+                    let clearStars = clearStar.repeat((5 - this.props.reviews[key].rating))
                     return(
-                        <div key={this.props.reviews[key].id}>
-                            <h4>User: {this.props.reviews[key].username}</h4>
-                            <h4>Rating: {this.props.reviews[key].rating}</h4>
-                            <h5>Review: {this.props.reviews[key].body}</h5>
+                        <div key={this.props.reviews[key].id}
+                            className="bookshow-reviews-individual-review">
+                            <div>
+                                <img src={window.userURL} alt="User Profile" />
+                                <div> 
+                                    {this.props.reviews[key].username} rated it <span className="orange-stars">{orangeStars}</span><span className="clear-stars">{clearStars}</span>
+                                    <p>{this.props.reviews[key].body}</p>
+                                </div>
+                            </div>
                         </div>
                     )
                     debugger
                 })
                 return(
-                    <div>{allReviews}</div>    
+                    <div className="bookshow-reviews">
+                        <div className="bookshow-reviews-user-review">
+                            <h1>MY ACTIVITY</h1>
+                            <div> Review of {this.props.book.title}</div>
+                            <div> Rating </div>
+                            <div> Review</div>
+                        </div>
+                        <div className="bookshow-reviews-community-reviews">
+                            <h1>COMMUNITY REVIEWS</h1>
+                            <div >{allReviews}</div>    
+                        </div>
+                    </div>
                 )
             } else{
                 return(
-                    <div>No reviews yet! Be the first!</div>
+                    <div className="bookshow-reviews">No reviews yet! Be the first!</div>
                 )
             }
         

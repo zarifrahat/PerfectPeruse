@@ -1,0 +1,38 @@
+.bookshow-reviews > div{
+    margin-top: 20px;
+
+}
+.bookshow-reviews h1{
+    color: #382110;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D8D8D8;
+
+}
+.bookshow-reviews-user-review div{
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+
+}
+
+.bookshow-reviews-individual-review{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.bookshow-reviews-individual-review img{
+    height: 66px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.bookshow-reviews-individual-review > div{
+    display: flex;
+    flex-direction: row;
+}
+
+.bookshow-reviews-individual-review span{
+    color: #FA6049;
+}   
