@@ -34,6 +34,12 @@ export const getReviews = (id) => dispatch => {
             error => dispatch(receiveReviewErrors(error.responseJSON))
         )
 }
+export const getReview = (userId, bookId) => dispatch => {
+    return ReviewApiUtil.getReview(userId, bookId)
+        .then(review => dispatch(receiveReview(review)),
+            error => dispatch(receiveReviewErrors(error.responseJSON))
+        )
+}
 
 
 

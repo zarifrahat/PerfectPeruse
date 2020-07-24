@@ -4,6 +4,13 @@ class Api::ReviewsController < ApplicationController
         render :index
     end
 
+    def show
+        
+        @show_reviews = Review.where(book_id: params[:book_id], user_id: params[:id])
+         #puts @show_reviews.inspect
+        render :show
+    end
+
     def create
         @new_review = Review.new(review_params)
         if @new_review.save

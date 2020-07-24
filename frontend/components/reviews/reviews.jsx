@@ -11,15 +11,31 @@ class Reviews extends React.Component {
         this.props.getReviews(this.props.bookId);
     }
 
+    userRatingStars(rating){
+        let star = "★";
+                let goldStars = star.repeat(rating)
+                let clearStars = star.repeat((5 - rating))
+        return(
+            <span>
+                <span className="gold-stars">{goldStars}</span><span className="clear-stars">{clearStars}</span>
+            </span>
+        )
+    }
+
     render(){
-        debugger
+        
+            let currentUserReview = null;
             if(Object.keys(this.props.reviews).length >0){
                 let allKeys = Object.keys(this.props.reviews)
                 let allReviews = allKeys.map( key =>{
+                    if (this.props.reviews[key].user_id === this.props.sessionId){
+                        currentUserReview = this.props.reviews[key]
+                    }
+
                     let star = "★";
-                    let clearStar = "☆";
+                    // let clearStar = "☆";
                     let orangeStars = star.repeat(this.props.reviews[key].rating)
-                    let clearStars = clearStar.repeat((5 - this.props.reviews[key].rating))
+                    let clearStars = star.repeat((5 - this.props.reviews[key].rating))
                     return(
                         <div key={this.props.reviews[key].id}
                             className="bookshow-reviews-individual-review">
@@ -32,15 +48,20 @@ class Reviews extends React.Component {
                             </div>
                         </div>
                     )
-                    debugger
+                    
                 })
                 return(
                     <div className="bookshow-reviews">
                         <div className="bookshow-reviews-user-review">
-                            <h1>MY ACTIVITY</h1>
+                            <div className="bookshow-reviews-user-review-header">
+                                <h1>MY ACTIVITY</h1>
+                                <Link to={`/books/${this.props.book.id}/review/edit`}>
+                                    Edit
+                                </Link>
+                            </div>
                             <div> Review of {this.props.book.title}</div>
-                            <div> Rating </div>
-                            <div> Review</div>
+                            <div> Rating {this.userRatingStars(currentUserReview.rating)}</div>
+                            <div> Review {currentUserReview.body}</div>
                         </div>
                         <div className="bookshow-reviews-community-reviews">
                             <h1>COMMUNITY REVIEWS</h1>
