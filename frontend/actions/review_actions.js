@@ -51,7 +51,7 @@ export const createReview = (review) => dispatch => {
 }
 
 export const editReview = (review) => dispatch => {
-    return ReviewApiUtil.editReview(bookshelf)
+    return ReviewApiUtil.editReview(review)
         .then(review => dispatch(receiveReview(review)),
             error => dispatch(receiveReviewErrors(error.responseJSON))
         )

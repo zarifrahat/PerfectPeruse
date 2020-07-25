@@ -6,7 +6,7 @@ class Api::ReviewsController < ApplicationController
 
     def show
         
-        @show_reviews = Review.where(book_id: params[:book_id], user_id: params[:id])
+        @review = Review.where(book_id: params[:book_id], user_id: params[:id])
          #puts @show_reviews.inspect
         render :show
     end
@@ -22,9 +22,9 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        @updated_review = Review.find(id: params[:id])
-        if @updated_review.update(review_params)
-            
+        @review = Review.where(book_id: params[:book_id], user_id: params[:id])
+        if @review.update(review_params)
+            render :show
         else
             render json: ["Couldn't update your review!"], status: 422 
         end
@@ -40,6 +40,6 @@ class Api::ReviewsController < ApplicationController
 
     private 
     def review_params
-        params.require(:bookToShelf).permit(:user_id, :book_id, :rating, :body)
+        params.require(:review).permit(:user_id, :book_id, :rating, :body)
     end
 end

@@ -7,9 +7,11 @@ class ReviewEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            rating: 0,
             body: ""
         }
         this.props.getBooks();
+        this.handleEdit = this.handleEdit.bind(this)
     }
     componentDidMount() {
         console.log("componentdidmount")
@@ -18,27 +20,39 @@ class ReviewEdit extends React.Component {
 
     update(field) {
         return e => {
-            console.log("BEFORE:",this.state)
             this.setState({ [field]: e.currentTarget.value });
-            console.log("AFTER:",this.state)
         }
+    }
+    handleRadioButton(number){
+        this.setState({rating: number});
+
+    }
+
+    handleEdit(e) {
+        e.preventDefault();
+        debugger
+        const review = Object.assign({}, this.state, { user_id: this.props.sessionId, book_id: this.props.bookId});
+        debugger
+        this.props.editReview(review);
+        debugger
     }
 
     render() {
         const book = this.props.books[this.props.bookId];
         if ((Object.keys(this.props.books).length > 0) && (Object.keys(this.props.reviews).length > 0)) {
             let originalBody = this.props.reviews[this.props.sessionId].body;
+            let originalRating = this.props.reviews[this.props.sessionId].rating;
             return (
                 <div className="review-edit">
                     <NavbarContainer />
                     <div className="review-edit-menu">
-                        {book.title} > Review > Edit
+                        <Link to={`/books/${this.props.bookId}`}><div>{book.title}</div></Link> > Review > Edit
                     </div>
                     <div className="review-edit-book-info">
-                        <img src={book.photoUrl}
-                            alt={book.title} />
+                        <Link to={`/books/${this.props.bookId}`}><img src={book.photoUrl}
+                            alt={book.title} /></Link>
                         <div>
-                            <div>{book.title}</div>
+                            <Link to={`/books/${this.props.bookId}`}><div>{book.title}</div></Link>
                             <div>by {book.author}</div>
                         </div>
                     </div>
@@ -47,15 +61,20 @@ class ReviewEdit extends React.Component {
                         <div>
                             <div>My rating:</div>
                             <div className="review-edit-rating">
-                                <input type="radio" name="rating" id="1" className="review-edit-star"/>
+                                <input type="radio" name="rating" id="1" className="review-edit-star"  
+                                    defaultChecked={originalRating === 1} onChange={() => this.handleRadioButton(1)}/>
                                 <label for="1">★</label>
-                                <input type="radio" name="rating" id="2" className="review-edit-star"/>
+                                <input type="radio" name="rating" id="2" className="review-edit-star" 
+                                defaultChecked={originalRating === 2} onChange={() => this.handleRadioButton(2)}/>
                                 <label for="2">★</label>
-                                <input type="radio" name="rating" id="3" className="review-edit-star"/>
+                                <input type="radio" name="rating" id="3" className="review-edit-star" 
+                                defaultChecked={originalRating === 3} onChange={() => this.handleRadioButton(3)}/>
                                 <label for="3">★</label>
-                                <input type="radio" name="rating" id="4" className="review-edit-star"/>
+                                <input type="radio" name="rating" id="4" className="review-edit-star" 
+                                defaultChecked={originalRating === 4} onChange={() => this.handleRadioButton(4)}/>
                                 <label for="4">★</label>
-                                <input type="radio" name="rating" id="5" className="review-edit-star"/>
+                                <input type="radio" name="rating" id="5" className="review-edit-star" 
+                                defaultChecked={originalRating === 5} onChange={() => this.handleRadioButton(5)}/>
                                 <label for="5">★</label>
                             </div>
                         </div>
@@ -64,7 +83,9 @@ class ReviewEdit extends React.Component {
                     <textarea className="review-edit-textarea" 
                         onChange={this.update('body')}
                     defaultValue={originalBody} name="" id="" cols="30" rows="10"></textarea>
-                    <button>Save</button>
+                    <form onSubmit={this.handleEdit}>
+                        <input type="submit" value="Save"/>
+                    </form>
                     <Footer />
                 </div>
             )
