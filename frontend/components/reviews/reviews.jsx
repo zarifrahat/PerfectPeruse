@@ -41,8 +41,13 @@ class Reviews extends React.Component {
                             className="bookshow-reviews-individual-review">
                             <div>
                                 <img src={window.userURL} alt="User Profile" />
-                                <div> 
-                                    {this.props.reviews[key].username} rated it <span className="orange-stars">{orangeStars}</span><span className="clear-stars">{clearStars}</span>
+                                <div className="bookshow-reviews-individual-review-fulltext"> 
+                                    <div className="bookshow-reviews-individual-review-title">
+                                        <div>
+                                            {this.props.reviews[key].username} rated it <span className="orange-stars">{orangeStars}</span><span className="clear-stars">{clearStars}</span>
+                                        </div>
+                                        <span>{this.props.reviews[key].created_at.split("").slice(0,10)}</span>
+                                    </div>
                                     <p>{this.props.reviews[key].body}</p>
                                 </div>
                             </div>
@@ -59,9 +64,9 @@ class Reviews extends React.Component {
                                     Edit
                                 </Link>
                             </div>
-                            <div> Review of {this.props.book.title}</div>
-                            <div> Rating {this.userRatingStars(currentUserReview.rating)}</div>
-                            <div> Review {currentUserReview.body}</div>
+                            <div> <span className="bookshow-reviews-user-review-details">Review of</span>  <span>{this.props.book.title}</span></div>
+                            <div> <span className="bookshow-reviews-user-review-details">Rating</span>  <span>{this.userRatingStars(currentUserReview.rating)}</span></div>
+                            <div> <span className="bookshow-reviews-user-review-details">Review</span>  <span>{currentUserReview.body}</span></div>
                         </div>
                         <div className="bookshow-reviews-community-reviews">
                             <h1>COMMUNITY REVIEWS</h1>
@@ -71,7 +76,24 @@ class Reviews extends React.Component {
                 )
             } else{
                 return(
-                    <div className="bookshow-reviews">No reviews yet! Be the first!</div>
+                    <div className="bookshow-reviews">
+                        <div className="bookshow-reviews-user-review">
+                            <div className="bookshow-reviews-user-review-header">
+                                <h1>MY ACTIVITY</h1>
+                            </div>
+                            <div> <span className="bookshow-reviews-user-review-details">Review of</span> {this.props.book.title}</div>
+                            <div> <span className="bookshow-reviews-user-review-details">Rating</span> <span className="clear-stars">★★★★★</span></div>
+                            <div><span className="bookshow-reviews-user-review-details">Review</span>
+                                <Link to={`/books/${this.props.book.id}/review/create`}>
+                                    <button>Write a review</button>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="bookshow-reviews-community-reviews">
+                            <h1>COMMUNITY REVIEWS</h1>
+                            <div className="bookshow-no-reviews">No reviews yet! Be the first!</div>
+                        </div>
+                    </div>
                 )
             }
         

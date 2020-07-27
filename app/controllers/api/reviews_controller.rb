@@ -12,9 +12,9 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create
-        @new_review = Review.new(review_params)
-        if @new_review.save
-            
+        @review = Review.new(review_params)
+        if @review.save
+            render :show
         else
             render json: ["Couldn't create your review!"], status: 422 
         end
@@ -24,7 +24,7 @@ class Api::ReviewsController < ApplicationController
     def update
         @review = Review.where(book_id: params[:book_id], user_id: params[:id])
         if @review.update(review_params)
-            render :show
+            render :create
         else
             render json: ["Couldn't update your review!"], status: 422 
         end

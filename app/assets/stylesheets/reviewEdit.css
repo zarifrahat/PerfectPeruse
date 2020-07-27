@@ -1,0 +1,53 @@
+.review-edit-container{
+    width: 960px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Merriweather", "Georgia", serif;
+}
+
+.review-edit-menu{
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.review-edit-menu-title{
+    color: #00635d;
+}
+.review-edit-menu-title:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.review-edit-menu-title2:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.review-edit-book-info img{
+    width: 50px;
+    height: 75px;
+    margin-right: 10px;
+}
+
+.review-edit-book-info{
+    display: flex;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.review-edit-menu-title2{
+    color: #333333;
+    font-size: 18px;
+
+}
+
+.review-edit-menu-author{
+    font-size: 14px;
+}
+.review-edit-textarea{
+    height: 312px;
+    width: 60%;
+    border: 1px solid #DCD6CC;
+}

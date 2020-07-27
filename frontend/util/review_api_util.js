@@ -15,7 +15,7 @@ export const getReview = (userId, bookId) => (
 export const createReview = (review) => (
     $.ajax({
         method: 'POST',
-        url: `/api/books/:book_id/reviews`,
+        url: `/api/books/${review.book_id}/reviews`,
         data: { review }
     })
 );
