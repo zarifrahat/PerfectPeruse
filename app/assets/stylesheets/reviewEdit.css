@@ -87,7 +87,9 @@
 input[type=radio] {
   display: none;
 }
-
+label{
+    color: #D6D6D6;
+}
 input[type=radio]:checked ~ label {
   color: #F5A524;
 }

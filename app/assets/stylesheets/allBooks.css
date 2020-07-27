@@ -1,0 +1,10 @@
+.allBooks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.allBooks-main-showbooks-list{
+    display: flex;
+    flex-wrap: wrap
+}

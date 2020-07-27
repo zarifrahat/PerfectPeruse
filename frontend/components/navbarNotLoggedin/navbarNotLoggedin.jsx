@@ -61,7 +61,9 @@ class NavbarNotLoggedin extends React.Component {
                             <Link to="/">Home</Link>
                         </li>
                         <li>My Books</li>
-                        <li>Friends</li>
+                        <li>
+                            <Link to="/allbooks">All Books</Link>
+                        </li>
                     </ul>
                 </div>
 
