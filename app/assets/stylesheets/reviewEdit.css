@@ -1,9 +1,12 @@
 .review-edit-container{
-    width: 960px;
+    /* width: 960px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: "Merriweather", "Georgia", serif;
+    width: 60%;
+    margin-left: 19%;
+    margin-right: 19%;
 }
 
 .review-edit-menu{
@@ -48,6 +51,43 @@
 }
 .review-edit-textarea{
     height: 312px;
-    width: 60%;
+    width: 100%;
     border: 1px solid #DCD6CC;
+}
+
+.review-edit-book-review-line1{
+    display: flex;
+    margin-top: 10px;
+}
+
+.review-edit-book-review-line1-myreview, .review-edit-book-review-line1-whatdidyouthink{
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.review-submit{
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    cursor: pointer;
+    background-color: #F4F1EA;
+    line-height: 1;
+    padding: 8px 12px;
+    margin-top: 10px;
+}
+
+.review-edit-rating {
+  display: inline-block;
+}
+.review-edit-rating * {
+  float: right;
+}
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:checked ~ label {
+  color: #F5A524;
 }

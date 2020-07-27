@@ -39,47 +39,50 @@ class ReviewCreate extends React.Component {
             return (
                 <div className="review-edit">
                     <NavbarContainer />
-                    <div className="review-edit-menu">
-                        <Link to={`/books/${this.props.bookId}`}><div>{book.title}</div></Link> > Review > Create
-                    </div>
-                    <div className="review-edit-book-info">
-                        <Link to={`/books/${this.props.bookId}`}><img src={book.photoUrl}
-                            alt={book.title} /></Link>
-                        <div>
-                            <Link to={`/books/${this.props.bookId}`}><div>{book.title}</div></Link>
-                            <div>by {book.author}</div>
-                        </div>
-                    </div>
+                    <div className="review-edit-container">
 
-                    <div className="review-edit-book-review">
-                        <div>
-                            <div>My rating:</div>
-                            <div className="review-edit-rating">
-                                <input type="radio" name="rating" id="1" className="review-edit-star"
-                                     onChange={() => this.handleRadioButton(1)} />
-                                <label for="1">★</label>
-                                <input type="radio" name="rating" id="2" className="review-edit-star"
-                                     onChange={() => this.handleRadioButton(2)} />
-                                <label for="2">★</label>
-                                <input type="radio" name="rating" id="3" className="review-edit-star"
-                                     onChange={() => this.handleRadioButton(3)} />
-                                <label for="3">★</label>
-                                <input type="radio" name="rating" id="4" className="review-edit-star"
-                                     onChange={() => this.handleRadioButton(4)} />
-                                <label for="4">★</label>
-                                <input type="radio" name="rating" id="5" className="review-edit-star"
-                                     onChange={() => this.handleRadioButton(5)} />
-                                <label for="5">★</label>
+                        <div className="review-edit-menu">
+                            <Link to={`/books/${this.props.bookId}`}><div className="review-edit-menu-title">{book.title}</div></Link> > Review > Create
+                        </div>
+                        <div className="review-edit-book-info">
+                            <Link to={`/books/${this.props.bookId}`}><img src={book.photoUrl}
+                                alt={book.title} /></Link>
+                            <div>
+                                <Link to={`/books/${this.props.bookId}`}><div className="review-edit-menu-title2">{book.title}</div></Link>
+                                <div className="review-edit-menu-author">by {book.author}</div>
                             </div>
                         </div>
-                        <div>What did you think?</div>
+
+                        <div className="review-edit-book-review">
+                            <div className="review-edit-book-review-line1">
+                                <div className="review-edit-book-review-line1-myreview">My rating:</div>
+                                <div className="review-edit-rating">
+                                    <input type="radio" name="rating" id="5" className="review-edit-star"
+                                        onChange={() => this.handleRadioButton(5)} />
+                                    <label for="5">★</label>
+                                    <input type="radio" name="rating" id="4" className="review-edit-star"
+                                        onChange={() => this.handleRadioButton(4)} />
+                                    <label for="4">★</label>
+                                    <input type="radio" name="rating" id="3" className="review-edit-star"
+                                        onChange={() => this.handleRadioButton(3)} />
+                                    <label for="3">★</label>
+                                    <input type="radio" name="rating" id="2" className="review-edit-star"
+                                        onChange={() => this.handleRadioButton(2)} />
+                                    <label for="2">★</label>
+                                    <input type="radio" name="rating" id="1" className="review-edit-star"
+                                        onChange={() => this.handleRadioButton(1)} />
+                                    <label for="1">★</label>
+                                </div>
+                            </div>
+                            <div className="review-edit-book-review-line1-whatdidyouthink">What did you think?</div>
+                        </div>
+                        <textarea className="review-edit-textarea"
+                            onChange={this.update('body')}
+                            defaultValue="" name="" id="" cols="30" rows="10"></textarea>
+                        <form onSubmit={this.handleCreate}>
+                            <input className="review-submit" type="submit" value="Save" />
+                        </form>
                     </div>
-                    <textarea className="review-edit-textarea"
-                        onChange={this.update('body')}
-                        defaultValue="" name="" id="" cols="30" rows="10"></textarea>
-                    <form onSubmit={this.handleCreate}>
-                        <input type="submit" value="Save" />
-                    </form>
                     <Footer />
                 </div>
             )

@@ -28,6 +28,8 @@
     display: inline-block;
     height: 18px;
     width: 130px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .bookshow-reviews-individual-review{
@@ -58,6 +60,17 @@
 }
 .bookshow-reviews-individual-review-title > span{
     color: #bbbbbb;
+}
+
+.bookshow-reviews-user-review-writeareview{
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+    background-color: #F4F1EA;
+    line-height: 1;
+    padding: 8px 12px;
+
 }
 
 .orange-stars{

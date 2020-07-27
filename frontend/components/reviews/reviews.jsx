@@ -85,7 +85,7 @@ class Reviews extends React.Component {
                             <div> <span className="bookshow-reviews-user-review-details">Rating</span> <span className="clear-stars">★★★★★</span></div>
                             <div><span className="bookshow-reviews-user-review-details">Review</span>
                                 <Link to={`/books/${this.props.book.id}/review/create`}>
-                                    <button>Write a review</button>
+                                    <button className="bookshow-reviews-user-review-writeareview">Write a review</button>
                                 </Link>
                             </div>
                         </div>
