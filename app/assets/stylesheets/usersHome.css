@@ -1,17 +1,20 @@
 .usershome{
     display: flex;
     flex-direction: column;
+    background-color: #F9F7F4;
 }
 
 .usershome-main{
     display: flex;
     justify-content: center;
     font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    margin-top: 30px;
 }
 
 .usershome-left{
     display: flex;
     flex-direction: column;
+    
 }
 
 .usershome-main-left > div{
@@ -32,14 +35,17 @@
     font-weight: bolder;
 }
 
-.usershome-main-left-currentlyreading h1{
+.usershome-main-left-currentlyreading h1, .usershome-main-left-challenge h1{
     font-size: 14px;
     width: 300px;
+    font-weight: 900;
+    margin-bottom: 10px;
 }
 
 .usershome-main-left-currentlyreading img{
     width: 95px;
     height: 140px;
+    margin-right: 10px;
 }
 
 .usershome-main-right-updates{
@@ -56,4 +62,34 @@ p{
 .usershome-main-right-updates > div{
     border: 1px solid #D8D8D8;
     padding: 10px;
+}
+
+.usershome-main-left-currentlyreading-title:hover{
+    text-decoration: underline;
+}
+
+.usershome-main-right-updates-1, .usershome-main-right-updates-2{
+    background-color: white;
+}
+
+.usershome-main-left-wanttoread-books{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 300px;
+}
+.usershome-main-left-wanttoread-books img{
+    width: 95px;
+    height: 140px;
+    margin-right: 3px;
+}
+
+.usershome-main-left-bookshelves-allbookshelves{
+    color: #00635D;
+    cursor: pointer;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+}
+.usershome-main-left-bookshelves-allbookshelves:hover{
+    text-decoration: underline;
 }

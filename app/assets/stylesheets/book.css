@@ -62,9 +62,23 @@
 .bookshow-info-dropdown{
     margin-left: 20px;
 }
+.bookshow-info-dropdown-buttoncontainer{
+    display: flex;
+    position: relative;
+    
+}
+.bookshow-info-dropdown-buttoncontainer img{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: -21px;
+    right: 88px;
+    cursor: pointer;
+}
 
 .bookshow-info-dropdown-button{
     width: 200px;
+    height: 22px;
     padding: 5px;
     background-color: #F2F2F2;
     border: none;
@@ -81,6 +95,7 @@
     background-color: white;
     border:  1px solid #D6D0C4;
     min-width: 200px;
+    max-width: 200px;
     z-index: 1;
 }
 

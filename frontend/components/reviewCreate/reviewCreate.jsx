@@ -79,8 +79,11 @@ class ReviewCreate extends React.Component {
                         <textarea className="review-edit-textarea"
                             onChange={this.update('body')}
                             defaultValue="" name="" id="" cols="30" rows="10"></textarea>
+                        
                         <form onSubmit={this.handleCreate}>
-                            <input className="review-submit" type="submit" value="Save" />
+                            <Link to={`/books/${book.id}`}>
+                                <input className="review-submit" type="submit" value="Save" />
+                            </Link>                        
                         </form>
                     </div>
                     <Footer />

@@ -9,7 +9,14 @@ class User < ApplicationRecord
 
     has_many :bookshelves,
     class_name: :Bookshelf,
-    foreign_key: :user_id
+    foreign_key: :user_id,
+    dependent: :destroy
+
+    has_many :reviews,
+    class_name: :Review,
+    foreign_key: :user_id,
+    dependent: :destroy
+
 
   def self.find_by_credentials(email, password)
         @user = User.find_by(email: email)

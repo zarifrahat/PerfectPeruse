@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 import Footer from '../footer/footer';
 
@@ -12,6 +12,7 @@ class ReviewEdit extends React.Component {
         }
         this.props.getBooks();
         this.handleEdit = this.handleEdit.bind(this)
+        this.checkIfEditWasMade = this.checkIfEditWasMade.bind(this)
     }
     componentDidMount() {
         console.log("componentdidmount")
@@ -27,6 +28,16 @@ class ReviewEdit extends React.Component {
         this.setState({rating: number});
 
     }
+    checkIfEditWasMade(){
+        debugger
+        if (this.state.body.length === 0) {
+            this.setState({ body: this.props.reviews[this.props.sessionId].body });
+        }
+        if (this.state.rating === 0) {
+            this.setState({ rating: this.props.reviews[this.props.sessionId].rating });
+        }
+        debugger
+    }
 
     handleEdit(e) {
         e.preventDefault();
@@ -35,6 +46,7 @@ class ReviewEdit extends React.Component {
         debugger
         this.props.editReview(review);
         debugger
+        return <Redirect to={`/books/${this.props.bookId}`} />
     }
 
     render() {
@@ -86,7 +98,7 @@ class ReviewEdit extends React.Component {
                             onChange={this.update('body')}
                         defaultValue={originalBody} name="" id="" cols="30" rows="10"></textarea>
                         <form onSubmit={this.handleEdit}>
-                            <input className="review-submit" type="submit" value="Save"/>
+                                <input className="review-submit" type="submit" value="Save"/>
                         </form>
                     </div>
                     <Footer />

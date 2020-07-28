@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class Reviews extends React.Component {
     constructor(props) {
         super(props);
+        this.showUserReview = this.showUserReview.bind(this);
     }
 
     componentDidMount(){
@@ -20,6 +21,39 @@ class Reviews extends React.Component {
                 <span className="gold-stars">{goldStars}</span><span className="clear-stars">{clearStars}</span>
             </span>
         )
+    }
+
+    showUserReview(currentUserReview){
+        if(currentUserReview === null){
+            return(
+                <div className="bookshow-reviews-user-review">
+                    <div className="bookshow-reviews-user-review-header">
+                        <h1>MY ACTIVITY</h1>
+                    </div>
+                    <div> <span className="bookshow-reviews-user-review-details">Review of</span> {this.props.book.title}</div>
+                    <div> <span className="bookshow-reviews-user-review-details">Rating</span> <span className="clear-stars">★★★★★</span></div>
+                    <div><span className="bookshow-reviews-user-review-details">Review</span>
+                        <Link to={`/books/${this.props.book.id}/review/create`}>
+                            <button className="bookshow-reviews-user-review-writeareview">Write a review</button>
+                        </Link>
+                    </div>
+                </div>
+            )
+        }else{
+            return(
+                <div className="bookshow-reviews-user-review">
+                    <div className="bookshow-reviews-user-review-header">
+                        <h1>MY ACTIVITY</h1>
+                        <Link to={`/books/${this.props.book.id}/review/edit`}>
+                            Edit
+                                </Link>
+                    </div>
+                    <div> <span className="bookshow-reviews-user-review-details">Review of</span>  <span>{this.props.book.title}</span></div>
+                    <div> <span className="bookshow-reviews-user-review-details">Rating</span>  <span>{this.userRatingStars(currentUserReview.rating)}</span></div>
+                    <div> <span className="bookshow-reviews-user-review-details">Review</span>  <span>{currentUserReview.body}</span></div>
+                </div>
+            )
+        }
     }
 
     render(){
@@ -57,17 +91,7 @@ class Reviews extends React.Component {
                 })
                 return(
                     <div className="bookshow-reviews">
-                        <div className="bookshow-reviews-user-review">
-                            <div className="bookshow-reviews-user-review-header">
-                                <h1>MY ACTIVITY</h1>
-                                <Link to={`/books/${this.props.book.id}/review/edit`}>
-                                    Edit
-                                </Link>
-                            </div>
-                            <div> <span className="bookshow-reviews-user-review-details">Review of</span>  <span>{this.props.book.title}</span></div>
-                            <div> <span className="bookshow-reviews-user-review-details">Rating</span>  <span>{this.userRatingStars(currentUserReview.rating)}</span></div>
-                            <div> <span className="bookshow-reviews-user-review-details">Review</span>  <span>{currentUserReview.body}</span></div>
-                        </div>
+                        {this.showUserReview(currentUserReview)}
                         <div className="bookshow-reviews-community-reviews">
                             <h1>COMMUNITY REVIEWS</h1>
                             <div >{allReviews}</div>    
@@ -77,18 +101,7 @@ class Reviews extends React.Component {
             } else{
                 return(
                     <div className="bookshow-reviews">
-                        <div className="bookshow-reviews-user-review">
-                            <div className="bookshow-reviews-user-review-header">
-                                <h1>MY ACTIVITY</h1>
-                            </div>
-                            <div> <span className="bookshow-reviews-user-review-details">Review of</span> {this.props.book.title}</div>
-                            <div> <span className="bookshow-reviews-user-review-details">Rating</span> <span className="clear-stars">★★★★★</span></div>
-                            <div><span className="bookshow-reviews-user-review-details">Review</span>
-                                <Link to={`/books/${this.props.book.id}/review/create`}>
-                                    <button className="bookshow-reviews-user-review-writeareview">Write a review</button>
-                                </Link>
-                            </div>
-                        </div>
+                        {this.showUserReview(currentUserReview)}
                         <div className="bookshow-reviews-community-reviews">
                             <h1>COMMUNITY REVIEWS</h1>
                             <div className="bookshow-no-reviews">No reviews yet! Be the first!</div>

@@ -12,5 +12,6 @@ class Bookshelf < ApplicationRecord
     
     has_many :books,
     through: :booktoshelves,
-    source: :book
+    source: :book,
+    dependent: :destroy
 end

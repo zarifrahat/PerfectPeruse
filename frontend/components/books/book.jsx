@@ -105,15 +105,19 @@ class Book extends React.Component{
                                 alt={book.title} />
 
                             <div className="bookshow-info-dropdown">
-                                <div className="bookshow-info-dropdown-button"
+                                <div className="bookshow-info-dropdown-buttoncontainer"
                                     onClick={() => {
-                                        if (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display === "none"){
+                                        if (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display === "none") {
                                             (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "block")
-                                        } else{
+                                        } else {
                                             (document.getElementsByClassName("bookshow-info-dropdown-content")[0].style.display = "none")
                                         }
                                     }}>
-                                    {chosenStatus}</div>
+                                    <div className="bookshow-info-dropdown-button">
+                                        {chosenStatus}</div>
+                                    <img src={window.dropdownURL}
+                                        alt="Search"/>  
+                                </div>
                                 <div className="bookshow-info-dropdown-content">
                                     {usersBookshelvesList}
                                 </div>
