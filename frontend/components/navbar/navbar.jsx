@@ -39,10 +39,17 @@ class Navbar extends React.Component{
                             <Link to={`/books/${book.id}`} 
                                 >
                                 <li className="navbar-searchbar-results-book"
-                                key={book.id}
+                                    key={book.id}
+                                    onClick={this.changeCurrentSearch}
                                 >
-                                    <h1>{book.title}</h1>
-                                    <h2>by {book.author}</h2>
+                                    <div>
+                                        <img src={book.photoUrl}
+                                            alt={book.title} />
+                                    </div>
+                                    <div>
+                                        <h1>{book.title}</h1>
+                                        <h2>by {book.author}</h2>
+                                    </div>
                                 </li>
                             </Link>
                             
