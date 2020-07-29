@@ -24,9 +24,9 @@ class Splash extends React.Component {
         }
 
         this.demoUser = {
-            username: "Casey Lee",
-            email: "caseylee@gmail.com",
-            password: "123456"
+            username: "Demo User",
+            email: "demouser@gmail.com",
+            password: "password"
         }
         
         this.handleDemoUser = this.handleDemoUser.bind(this);
