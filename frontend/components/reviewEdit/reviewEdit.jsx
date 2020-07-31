@@ -41,6 +41,12 @@ class ReviewEdit extends React.Component {
 
     handleEdit(e) {
         e.preventDefault();
+        if(this.state.body === ""){
+            this.setState({ body: this.props.reviews[this.props.sessionId].body });
+        }
+        if (this.state.rating === 0) {
+            this.setState({ rating: this.props.reviews[this.props.sessionId].rating });
+        }
         debugger
         const review = Object.assign({}, this.state, { user_id: this.props.sessionId, book_id: this.props.bookId});
         debugger

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 import Footer from '../footer/footer';
 
@@ -29,8 +29,9 @@ class ReviewCreate extends React.Component {
         debugger
         const review = Object.assign({}, this.state, { user_id: this.props.sessionId, book_id: this.props.bookId });
         debugger
-        this.props.createReview(review);
-        debugger
+        this.props.createReview(review)
+            .then(this.props.history.push(`/books/${this.props.bookId}`));
+        debugger 
     }
 
     render() {
@@ -81,9 +82,7 @@ class ReviewCreate extends React.Component {
                             defaultValue="" name="" id="" cols="30" rows="10"></textarea>
                         
                         <form onSubmit={this.handleCreate}>
-                            <Link to={`/books/${book.id}`}>
                                 <input className="review-submit" type="submit" value="Save" />
-                            </Link>                        
                         </form>
                     </div>
                     <Footer />
