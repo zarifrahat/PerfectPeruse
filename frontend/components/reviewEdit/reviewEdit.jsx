@@ -8,11 +8,11 @@ class ReviewEdit extends React.Component {
         super(props);
         this.state = {
             rating: 0,
-            body: ""
+            body: "",
+            toBookShowPage: false
         }
         this.props.getBooks();
         this.handleEdit = this.handleEdit.bind(this)
-        this.checkIfEditWasMade = this.checkIfEditWasMade.bind(this)
     }
     componentDidMount() {
         console.log("componentdidmount")
@@ -28,34 +28,33 @@ class ReviewEdit extends React.Component {
         this.setState({rating: number});
 
     }
-    checkIfEditWasMade(){
-        debugger
-        if (this.state.body.length === 0) {
-            this.setState({ body: this.props.reviews[this.props.sessionId].body });
-        }
-        if (this.state.rating === 0) {
-            this.setState({ rating: this.props.reviews[this.props.sessionId].rating });
-        }
-        debugger
-    }
 
     handleEdit(e) {
         e.preventDefault();
+        let editedReview = {};
         if(this.state.body === ""){
-            this.setState({ body: this.props.reviews[this.props.sessionId].body });
+            debugger
+            editedReview["body"] = this.props.reviews[this.props.sessionId].body;
+        }else{
+            editedReview["body"] = this.state.body;
         }
-        if (this.state.rating === 0) {
-            this.setState({ rating: this.props.reviews[this.props.sessionId].rating });
+        debugger
+        if(this.state.rating === 0){
+            editedReview["rating"] = this.props.reviews[this.props.sessionId].rating;
+        }else{
+            editedReview["rating"] = this.state.rating;
         }
         debugger
-        const review = Object.assign({}, this.state, { user_id: this.props.sessionId, book_id: this.props.bookId});
+        const review = Object.assign({}, editedReview, { user_id: this.props.sessionId, book_id: this.props.bookId});
         debugger
-        this.props.editReview(review);
-        debugger
-        return <Redirect to={`/books/${this.props.bookId}`} />
+        this.props.editReview(review)
+            .then(this.setState({ toBookShowPage: true }));
     }
 
     render() {
+        if (this.state.toBookShowPage === true){
+            return <Redirect to={`/books/${this.props.bookId}`} />
+        }
         const book = this.props.books[this.props.bookId];
         if ((Object.keys(this.props.books).length > 0) && (Object.keys(this.props.reviews).length > 0)) {
             let originalBody = this.props.reviews[this.props.sessionId].body;
